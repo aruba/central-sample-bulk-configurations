@@ -1,0 +1,4989 @@
+%_sys_template_header%
+%_sys_stack_command%
+hostname "%hostname%"
+%_sys_module_command%
+snmpv3 engineid "%_sys_snmpv3_engineid%"
+%if _motd%
+banner motd "%_motd%"
+%else%
+banner motd "Unauthorized use of this system can result in civil and criminal penalties!"
+%endif%
+no cwmp enable
+%if syslog.server%
+logging %syslog.server%
+logging origin-id hostname
+%endif%
+include-credentials
+%if static.route.1%
+ip route %static.route.1%
+%endif%
+%if static.route.2%
+ip route %static.route.2%
+%endif%
+%if static.route.3%
+ip route %static.route.3%
+%endif%
+password manager user-name "admin" sha1 "8db6741fec5628d6415719b59a9b0ddfd668c8a4"
+timesync ntp
+no sntp
+ntp unicast
+ntp server 129.6.15.28 iburst
+ntp enable
+%if vlan.1.dhcp = 0%
+	ip default-gateway %dfgw%
+	ip dns server-address priority 1 %dns%
+%endif%
+%if member.1.ports%
+interface 1/1
+   %if interface.1_1.state=disable%
+	disable
+   %endif%
+   %if interface.1_1.name%
+     name %interface.1_1.name% 
+   %endif%
+   %if interface.1_1.poe = 0%
+   	no power-over-ethernet
+   %endif%
+exit
+interface 1/2
+   %if interface.1_2.state=disable%
+	disable
+   %endif%
+   %if interface.1_2.name%
+     name %interface.1_2.name% 
+   %endif%
+   %if interface.1_2.poe = 0%
+   	no power-over-ethernet
+   %endif%
+exit
+interface 1/3
+   %if interface.1_3.state=disable%
+	disable
+   %endif%
+   %if interface.1_3.name%
+     name %interface.1_3.name% 
+   %endif%
+   %if interface.1_3.poe = 0%
+   	no power-over-ethernet
+   %endif%
+exit
+interface 1/4
+   %if interface.1_4.state=disable%
+	disable
+   %endif%
+   %if interface.1_4.name%
+     name %interface.1_4.name% 
+   %endif%
+   %if interface.1_4.poe = 0%
+   	no power-over-ethernet
+   %endif%
+exit
+interface 1/5
+   %if interface.1_5.state=disable%
+	disable
+   %endif%
+   %if interface.1_5.name%
+     name %interface.1_5.name% 
+   %endif%
+   %if interface.1_5.poe = 0%
+   	no power-over-ethernet
+   %endif%
+exit
+interface 1/6
+   %if interface.1_6.state=disable%
+	disable
+   %endif%
+   %if interface.1_6.name%
+     name %interface.1_6.name% 
+   %endif%
+   %if interface.1_6.poe = 0%
+   	no power-over-ethernet
+   %endif%
+exit
+interface 1/7
+   %if interface.1_7.state=disable%
+	disable
+   %endif%
+   %if interface.1_7.name%
+     name %interface.1_7.name% 
+   %endif%
+   %if interface.1_7.poe = 0%
+   	no power-over-ethernet
+   %endif%
+exit
+interface 1/8
+   %if interface.1_8.state=disable%
+	disable
+   %endif%
+   %if interface.1_8.name%
+     name %interface.1_8.name% 
+   %endif%
+   %if interface.1_8.poe = 0%
+   	no power-over-ethernet
+   %endif%
+exit
+interface 1/9
+   %if interface.1_9.state=disable%
+	disable
+   %endif%
+   %if interface.1_9.name%
+     name %interface.1_9.name% 
+   %endif%
+   %if interface.1_9.poe = 0%
+   	no power-over-ethernet
+   %endif%
+exit
+interface 1/10
+   %if interface.1_10.state=disable%
+	disable
+   %endif%
+   %if interface.1_10.name%
+     name %interface.1_10.name% 
+   %endif%
+   %if interface.1_10.poe = 0%
+   	no power-over-ethernet
+   %endif%
+exit
+interface 1/11
+   %if interface.1_11.state=disable%
+	disable
+   %endif%
+   %if interface.1_11.name%
+     name %interface.1_11.name% 
+   %endif%
+   %if interface.1_11.poe = 0%
+   	no power-over-ethernet
+   %endif%
+exit
+interface 1/12
+   %if interface.1_12.state=disable%
+	disable
+   %endif%
+   %if interface.1_12.name%
+     name %interface.1_12.name% 
+   %endif%
+   %if interface.1_12.poe = 0%
+   	no power-over-ethernet
+   %endif%
+exit
+interface 1/13
+   %if interface.1_13.state=disable%
+	disable
+   %endif%
+   %if interface.1_13.name%
+     name %interface.1_13.name% 
+   %endif%
+   %if interface.1_13.poe = 0%
+   	no power-over-ethernet
+   %endif%
+exit
+interface 1/14
+   %if interface.1_14.state=disable%
+	disable
+   %endif%
+   %if interface.1_14.name%
+     name %interface.1_14.name% 
+   %endif%
+   %if interface.1_14.poe = 0%
+   	no power-over-ethernet
+   %endif%
+exit
+interface 1/15
+   %if interface.1_15.state=disable%
+	disable
+   %endif%
+   %if interface.1_15.name%
+     name %interface.1_15.name% 
+   %endif%
+   %if interface.1_15.poe = 0%
+   	no power-over-ethernet
+   %endif%
+exit
+interface 1/16
+   %if interface.1_16.state=disable%
+	disable
+   %endif%
+   %if interface.1_16.name%
+     name %interface.1_16.name% 
+   %endif%
+   %if interface.1_16.poe = 0%
+   	no power-over-ethernet
+   %endif%
+exit
+interface 1/17
+   %if interface.1_17.state=disable%
+	disable
+   %endif%
+   %if interface.1_17.name%
+     name %interface.1_17.name% 
+   %endif%
+   %if interface.1_17.poe = 0%
+   	no power-over-ethernet
+   %endif%
+exit
+interface 1/18
+   %if interface.1_18.state=disable%
+	disable
+   %endif%
+   %if interface.1_18.name%
+     name %interface.1_18.name% 
+   %endif%
+   %if interface.1_18.poe = 0%
+   	no power-over-ethernet
+   %endif%
+exit
+interface 1/19
+   %if interface.1_19.state=disable%
+	disable
+   %endif%
+   %if interface.1_19.name%
+     name %interface.1_19.name% 
+   %endif%
+   %if interface.1_19.poe = 0%
+   	no power-over-ethernet
+   %endif%
+exit
+interface 1/20
+   %if interface.1_20.state=disable%
+	disable
+   %endif%
+   %if interface.1_20.name%
+     name %interface.1_20.name% 
+   %endif%
+   %if interface.1_20.poe = 0%
+   	no power-over-ethernet
+   %endif%
+exit
+interface 1/21
+   %if interface.1_21.state=disable%
+	disable
+   %endif%
+   %if interface.1_21.name%
+     name %interface.1_21.name% 
+   %endif%
+   %if interface.1_21.poe = 0%
+   	no power-over-ethernet
+   %endif%
+exit
+interface 1/22
+   %if interface.1_22.state=disable%
+	disable
+   %endif%
+   %if interface.1_22.name%
+     name %interface.1_22.name% 
+   %endif%
+   %if interface.1_22.poe = 0%
+   	no power-over-ethernet
+   %endif%
+exit
+interface 1/23
+   %if interface.1_23.state=disable%
+	disable
+   %endif%
+   %if interface.1_23.name%
+     name %interface.1_23.name% 
+   %endif%
+   %if interface.1_23.poe = 0%
+   	no power-over-ethernet
+   %endif%
+exit
+interface 1/24
+   %if interface.1_24.state=disable%
+	disable
+   %endif%
+   %if interface.1_24.name%
+     name %interface.1_24.name% 
+   %endif%
+   %if interface.1_24.poe = 0%
+   	no power-over-ethernet
+   %endif%
+exit
+%if _member.1.ports = 48%
+interface 1/25
+   %if interface.1_25.state=disable%
+	disable
+   %endif%
+   %if interface.1_25.name%
+     name %interface.1_25.name% 
+   %endif%
+   %if interface.1_25.poe = 0%
+   	no power-over-ethernet
+   %endif%
+exit
+interface 1/26
+   %if interface.1_26.state=disable%
+	disable
+   %endif%
+   %if interface.1_26.name%
+     name %interface.1_26.name% 
+   %endif%
+   %if interface.1_26.poe = 0%
+   	no power-over-ethernet
+   %endif%
+exit
+interface 1/27
+   %if interface.1_27.state=disable%
+	disable
+   %endif%
+   %if interface.1_27.name%
+     name %interface.1_27.name% 
+   %endif%
+   %if interface.1_27.poe = 0%
+   	no power-over-ethernet
+   %endif%
+exit
+interface 1/28
+   %if interface.1_28.state=disable%
+	disable
+   %endif%
+   %if interface.1_28.name%
+     name %interface.1_28.name% 
+   %endif%
+   %if interface.1_28.poe = 0%
+   	no power-over-ethernet
+   %endif%
+exit
+interface 1/29
+   %if interface.1_29.state=disable%
+	disable
+   %endif%
+   %if interface.1_29.name%
+     name %interface.1_29.name% 
+   %endif%
+   %if interface.1_29.poe = 0%
+   	no power-over-ethernet
+   %endif%
+exit
+interface 1/30
+   %if interface.1_30.state=disable%
+	disable
+   %endif%
+   %if interface.1_30.name%
+     name %interface.1_30.name% 
+   %endif%
+   %if interface.1_30.poe = 0%
+   	no power-over-ethernet
+   %endif%
+exit
+interface 1/31
+    %if interface.1_31.state=disable%
+	disable
+   %endif%
+   %if interface.1_31.name%
+     name %interface.1_31.name% 
+   %endif%
+   %if interface.1_31.poe = 0%
+   	no power-over-ethernet
+   %endif%
+exit
+interface 1/32
+   %if interface.1_32.state=disable%
+	disable
+   %endif%
+   %if interface.1_32.name%
+     name %interface.1_32.name% 
+   %endif%
+   %if interface.1_32.poe = 0%
+   	no power-over-ethernet
+   %endif%
+exit
+interface 1/33
+   %if interface.1_33.state=disable%
+	disable
+   %endif%
+   %if interface.1_33.name%
+     name %interface.1_33.name% 
+   %endif%
+   %if interface.1_33.poe = 0%
+   	no power-over-ethernet
+   %endif%
+exit
+interface 1/34
+   %if interface.1_34.state=disable%
+	disable
+   %endif%
+   %if interface.1_34.name%
+     name %interface.1_34.name% 
+   %endif%
+   %if interface.1_34.poe = 0%
+   	no power-over-ethernet
+   %endif%
+exit
+interface 1/35
+   %if interface.1_35.state=disable%
+	disable
+   %endif%
+   %if interface.1_35.name%
+     name %interface.1_35.name% 
+   %endif%
+   %if interface.1_35.poe = 0%
+   	no power-over-ethernet
+   %endif%
+exit
+interface 1/36
+   %if interface.1_36.state=disable%
+	disable
+   %endif%
+   %if interface.1_36.name%
+     name %interface.1_36.name% 
+   %endif%
+   %if interface.1_36.poe = 0%
+   	no power-over-ethernet
+   %endif%
+exit
+interface 1/37
+   %if interface.1_37.state=disable%
+	disable
+   %endif%
+   %if interface.1_37.name%
+     name %interface.1_37.name% 
+   %endif%
+   %if interface.1_37.poe = 0%
+   	no power-over-ethernet
+   %endif%
+exit
+interface 1/38
+   %if interface.1_38.state=disable%
+	disable
+   %endif%
+   %if interface.1_38.name%
+     name %interface.1_38.name% 
+   %endif%
+   %if interface.1_38.poe = 0%
+   	no power-over-ethernet
+   %endif%
+exit
+interface 1/39
+   %if interface.1_39.state=disable%
+	disable
+   %endif%
+   %if interface.1_39.name%
+     name %interface.1_39.name% 
+   %endif%
+   %if interface.1_39.poe = 0%
+   	no power-over-ethernet
+   %endif%
+exit
+interface 1/40
+   %if interface.1_40.state=disable%
+	disable
+   %endif%
+   %if interface.1_40.name%
+     name %interface.1_40.name% 
+   %endif%
+   %if interface.1_40.poe = 0%
+   	no power-over-ethernet
+   %endif%
+exit
+interface 1/41
+   %if interface.1_41.state=disable%
+	disable
+   %endif%
+   %if interface.1_41.name%
+     name %interface.1_41.name% 
+   %endif%
+   %if interface.1_41.poe = 0%
+   	no power-over-ethernet
+   %endif%
+exit
+interface 1/42
+   %if interface.1_42.state=disable%
+	disable
+   %endif%
+   %if interface.1_42.name%
+     name %interface.1_42.name% 
+   %endif%
+   %if interface.1_42.poe = 0%
+   	no power-over-ethernet
+   %endif%
+exit
+interface 1/43
+   %if interface.1_43.state=disable%
+	disable
+   %endif%
+   %if interface.1_43.name%
+     name %interface.1_43.name% 
+   %endif%
+   %if interface.1_43.poe = 0%
+   	no power-over-ethernet
+   %endif%
+exit
+interface 1/44
+   %if interface.1_44.state=disable%
+	disable
+   %endif%
+   %if interface.1_44.name%
+     name %interface.1_44.name% 
+   %endif%
+   %if interface.1_44.poe = 0%
+   	no power-over-ethernet
+   %endif%
+exit
+interface 1/45
+   %if interface.1_45.state=disable%
+	disable
+   %endif%
+   %if interface.1_45.name%
+     name %interface.1_45.name% 
+   %endif%
+   %if interface.1_45.poe = 0%
+   	no power-over-ethernet
+   %endif%
+exit
+interface 1/46
+   %if interface.1_46.state=disable%
+	disable
+   %endif%
+   %if interface.1_46.name%
+     name %interface.1_46.name% 
+   %endif%
+   %if interface.1_46.poe = 0%
+   	no power-over-ethernet
+   %endif%
+exit
+interface 1/47
+   %if interface.1_47.state=disable%
+	disable
+   %endif%
+   %if interface.1_47.name%
+     name %interface.1_47.name% 
+   %endif%
+   %if interface.1_47.poe = 0%
+   	no power-over-ethernet
+   %endif%
+exit
+interface 1/48
+   %if interface.1_48.state=disable%
+	disable
+   %endif%
+   %if interface.1_48.name%
+     name %interface.1_48.name% 
+   %endif%
+   %if interface.1_48.poe = 0%
+   	no power-over-ethernet
+   %endif%
+exit
+%endif%
+%if flex.a.member.1%
+%if flex.a.member.1 = JL081A%
+interface 1/A1
+   %interface.1_A1.state%
+   %if interface.1_A1.name%
+     name %interface.1_A1.name% 
+   %endif%
+   %if interface.1_A1.poe = no%
+   	no power-over-ethernet
+   %endif%
+exit
+interface 1/A2
+   %interface.1_A2.state%
+   %if interface.1_A2.name%
+     name %interface.1_A2.name% 
+   %endif%
+   %if interface.1_A2.poe = no%
+   	no power-over-ethernet
+   %endif%
+exit
+interface 1/A3
+   %interface.1_A3.state%
+   %if interface.1_A3.name%
+     name %interface.1_A3.name% 
+   %endif%
+   %if interface.1_A3.poe = no%
+   	no power-over-ethernet
+   %endif%
+exit
+interface 1/A4
+   %interface.1_A4.state%
+   %if interface.1_A4.name%
+     name %interface.1_A4.name% 
+   %endif%
+   %if interface.1_A4.poe = no%
+   	no power-over-ethernet
+   %endif%
+exit
+%endif%
+%if flex.a.member.1 = JL083A%
+interface 1/A1
+   %interface.1_A1.state%
+   %if interface.1_A1.name%
+     name %interface.1_A1.name% 
+   %endif%
+exit
+interface 1/A2
+   %interface.1_A2.state%
+   %if interface.1_A2.name%
+     name %interface.1_A2.name% 
+   %endif%
+exit
+interface 1/A3
+   %interface.1_A3.state%
+   %if interface.1_A3.name%
+     name %interface.1_A3.name% 
+   %endif%
+exit
+interface 1/A4
+   %interface.1_A4.state%
+   %if interface.1_A4.name%
+     name %interface.1_A4.name% 
+   %endif%
+exit
+%endif%
+%if flex.a.member.1 = JL078A%
+interface 1/A1
+   %interface.1_A1.state%
+   %if interface.1_A1.name%
+     name %interface.1_A1.name% 
+   %endif%
+exit
+%endif%
+%endif%
+%if _member.2.ports%
+interface 2/1
+   %if interface.2_1.state=disable%
+	disable
+   %endif%
+   %if interface.2_1.name%
+     name %interface.2_1.name% 
+   %endif%
+   %if interface.2_1.poe = 0%
+   	no power-over-ethernet
+   %endif%
+exit
+interface 2/2
+   %if interface.2_2.state=disable%
+	disable
+   %endif%
+   %if interface.2_2.name%
+     name %interface.2_2.name% 
+   %endif%
+   %if interface.2_2.poe = 0%
+   	no power-over-ethernet
+   %endif%
+exit
+interface 2/3
+   %if interface.2_3.state=disable%
+	disable
+   %endif%
+   %if interface.2_3.name%
+     name %interface.2_3.name% 
+   %endif%
+   %if interface.2_3.poe = 0%
+   	no power-over-ethernet
+   %endif%
+exit
+interface 2/4
+   %if interface.2_4.state=disable%
+	disable
+   %endif%
+   %if interface.2_4.name%
+     name %interface.2_4.name% 
+   %endif%
+   %if interface.2_4.poe = 0%
+   	no power-over-ethernet
+   %endif%
+exit
+interface 2/5
+   %if interface.2_5.state=disable%
+	disable
+   %endif%
+   %if interface.2_5.name%
+     name %interface.2_5.name% 
+   %endif%
+   %if interface.2_5.poe = 0%
+   	no power-over-ethernet
+   %endif%
+exit
+interface 2/6
+   %if interface.2_6.state=disable%
+	disable
+   %endif%
+   %if interface.2_6.name%
+     name %interface.2_6.name% 
+   %endif%
+   %if interface.2_6.poe = 0%
+   	no power-over-ethernet
+   %endif%
+exit
+interface 2/7
+   %if interface.2_7.state=disable%
+	disable
+   %endif%
+   %if interface.2_7.name%
+     name %interface.2_7.name% 
+   %endif%
+   %if interface.2_7.poe = 0%
+   	no power-over-ethernet
+   %endif%
+exit
+interface 2/8
+   %if interface.2_8.state=disable%
+	disable
+   %endif%
+   %if interface.2_8.name%
+     name %interface.2_8.name% 
+   %endif%
+   %if interface.2_8.poe = 0%
+   	no power-over-ethernet
+   %endif%
+exit
+interface 2/9
+   %if interface.2_9.state=disable%
+	disable
+   %endif%
+   %if interface.2_9.name%
+     name %interface.2_9.name% 
+   %endif%
+   %if interface.2_9.poe = 0%
+   	no power-over-ethernet
+   %endif%
+exit
+interface 2/10
+   %if interface.2_10.state=disable%
+	disable
+   %endif%
+   %if interface.2_10.name%
+     name %interface.2_10.name% 
+   %endif%
+   %if interface.2_10.poe = 0%
+   	no power-over-ethernet
+   %endif%
+exit
+interface 2/11
+   %if interface.2_11.state=disable%
+	disable
+   %endif%
+   %if interface.2_11.name%
+     name %interface.2_11.name% 
+   %endif%
+   %if interface.2_11.poe = 0%
+   	no power-over-ethernet
+   %endif%
+exit
+interface 2/12
+   %if interface.2_12.state=disable%
+	disable
+   %endif%
+   %if interface.2_12.name%
+     name %interface.2_12.name% 
+   %endif%
+   %if interface.2_12.poe = 0%
+   	no power-over-ethernet
+   %endif%
+exit
+interface 2/13
+   %if interface.2_13.state=disable%
+	disable
+   %endif%
+   %if interface.2_13.name%
+     name %interface.2_13.name% 
+   %endif%
+   %if interface.2_13.poe = 0%
+   	no power-over-ethernet
+   %endif%
+exit
+interface 2/14
+   %if interface.2_14.state=disable%
+	disable
+   %endif%
+   %if interface.2_14.name%
+     name %interface.2_14.name% 
+   %endif%
+   %if interface.2_14.poe = 0%
+   	no power-over-ethernet
+   %endif%
+exit
+interface 2/15
+   %if interface.2_15.state=disable%
+	disable
+   %endif%
+   %if interface.2_15.name%
+     name %interface.2_15.name% 
+   %endif%
+   %if interface.2_15.poe = 0%
+   	no power-over-ethernet
+   %endif%
+exit
+interface 2/16
+   %if interface.2_16.state=disable%
+	disable
+   %endif%
+   %if interface.2_16.name%
+     name %interface.2_16.name% 
+   %endif%
+   %if interface.2_16.poe = 0%
+   	no power-over-ethernet
+   %endif%
+exit
+interface 2/17
+   %if interface.2_17.state=disable%
+	disable
+   %endif%
+   %if interface.2_17.name%
+     name %interface.2_17.name% 
+   %endif%
+   %if interface.2_17.poe = 0%
+   	no power-over-ethernet
+   %endif%
+exit
+interface 2/18
+   %if interface.2_18.state=disable%
+	disable
+   %endif%
+   %if interface.2_18.name%
+     name %interface.2_18.name% 
+   %endif%
+   %if interface.2_18.poe = 0%
+   	no power-over-ethernet
+   %endif%
+exit
+interface 2/19
+   %if interface.2_19.state=disable%
+	disable
+   %endif%
+   %if interface.2_19.name%
+     name %interface.2_19.name% 
+   %endif%
+   %if interface.2_19.poe = 0%
+   	no power-over-ethernet
+   %endif%
+exit
+interface 2/20
+   %if interface.2_20.state=disable%
+	disable
+   %endif%
+   %if interface.2_20.name%
+     name %interface.2_20.name% 
+   %endif%
+   %if interface.2_20.poe = 0%
+   	no power-over-ethernet
+   %endif%
+exit
+interface 2/21
+   %if interface.2_21.state=disable%
+	disable
+   %endif%
+   %if interface.2_21.name%
+     name %interface.2_21.name% 
+   %endif%
+   %if interface.2_21.poe = 0%
+   	no power-over-ethernet
+   %endif%
+exit
+interface 2/22
+   %if interface.2_22.state=disable%
+	disable
+   %endif%
+   %if interface.2_22.name%
+     name %interface.2_22.name% 
+   %endif%
+   %if interface.2_22.poe = 0%
+   	no power-over-ethernet
+   %endif%
+exit
+interface 2/23
+   %if interface.2_23.state=disable%
+	disable
+   %endif%
+   %if interface.2_23.name%
+     name %interface.2_23.name% 
+   %endif%
+   %if interface.2_23.poe = 0%
+   	no power-over-ethernet
+   %endif%
+exit
+interface 2/24
+   %if interface.2_24.state=disable%
+	disable
+   %endif%
+   %if interface.2_24.name%
+     name %interface.2_24.name% 
+   %endif%
+   %if interface.2_24.poe = 0%
+   	no power-over-ethernet
+   %endif%
+exit
+%if _member.2.ports = 48%
+interface 2/25
+   %if interface.2_25.state=disable%
+	disable
+   %endif%
+   %if interface.2_25.name%
+     name %interface.2_25.name% 
+   %endif%
+   %if interface.2_25.poe = 0%
+   	no power-over-ethernet
+   %endif%
+exit
+interface 2/26
+   %if interface.2_26.state=disable%
+	disable
+   %endif%
+   %if interface.2_26.name%
+     name %interface.2_26.name% 
+   %endif%
+   %if interface.2_26.poe = 0%
+   	no power-over-ethernet
+   %endif%
+exit
+interface 2/27
+   %if interface.2_27.state=disable%
+	disable
+   %endif%
+   %if interface.2_27.name%
+     name %interface.2_27.name% 
+   %endif%
+   %if interface.2_27.poe = 0%
+   	no power-over-ethernet
+   %endif%
+exit
+interface 2/28
+   %if interface.2_28.state=disable%
+	disable
+   %endif%
+   %if interface.2_28.name%
+     name %interface.2_28.name% 
+   %endif%
+   %if interface.2_28.poe = 0%
+   	no power-over-ethernet
+   %endif%
+exit
+interface 2/29
+   %if interface.2_29.state=disable%
+	disable
+   %endif%
+   %if interface.2_29.name%
+     name %interface.2_29.name% 
+   %endif%
+   %if interface.2_29.poe = 0%
+   	no power-over-ethernet
+   %endif%
+exit
+interface 2/30
+   %if interface.2_30.state=disable%
+	disable
+   %endif%
+   %if interface.2_30.name%
+     name %interface.2_30.name% 
+   %endif%
+   %if interface.2_30.poe = 0%
+   	no power-over-ethernet
+   %endif%
+exit
+interface 2/31
+    %if interface.2_31.state=disable%
+	disable
+   %endif%
+   %if interface.2_31.name%
+     name %interface.2_31.name% 
+   %endif%
+   %if interface.2_31.poe = 0%
+   	no power-over-ethernet
+   %endif%
+exit
+interface 2/32
+   %if interface.2_32.state=disable%
+	disable
+   %endif%
+   %if interface.2_32.name%
+     name %interface.2_32.name% 
+   %endif%
+   %if interface.2_32.poe = 0%
+   	no power-over-ethernet
+   %endif%
+exit
+interface 2/33
+   %if interface.2_33.state=disable%
+	disable
+   %endif%
+   %if interface.2_33.name%
+     name %interface.2_33.name% 
+   %endif%
+   %if interface.2_33.poe = 0%
+   	no power-over-ethernet
+   %endif%
+exit
+interface 2/34
+   %if interface.2_34.state=disable%
+	disable
+   %endif%
+   %if interface.2_34.name%
+     name %interface.2_34.name% 
+   %endif%
+   %if interface.2_34.poe = 0%
+   	no power-over-ethernet
+   %endif%
+exit
+interface 2/35
+   %if interface.2_35.state=disable%
+	disable
+   %endif%
+   %if interface.2_35.name%
+     name %interface.2_35.name% 
+   %endif%
+   %if interface.2_35.poe = 0%
+   	no power-over-ethernet
+   %endif%
+exit
+interface 2/36
+   %if interface.2_36.state=disable%
+	disable
+   %endif%
+   %if interface.2_36.name%
+     name %interface.2_36.name% 
+   %endif%
+   %if interface.2_36.poe = 0%
+   	no power-over-ethernet
+   %endif%
+exit
+interface 2/37
+   %if interface.2_37.state=disable%
+	disable
+   %endif%
+   %if interface.2_37.name%
+     name %interface.2_37.name% 
+   %endif%
+   %if interface.2_37.poe = 0%
+   	no power-over-ethernet
+   %endif%
+exit
+interface 2/38
+   %if interface.2_38.state=disable%
+	disable
+   %endif%
+   %if interface.2_38.name%
+     name %interface.2_38.name% 
+   %endif%
+   %if interface.2_38.poe = 0%
+   	no power-over-ethernet
+   %endif%
+exit
+interface 2/39
+   %if interface.2_39.state=disable%
+	disable
+   %endif%
+   %if interface.2_39.name%
+     name %interface.2_39.name% 
+   %endif%
+   %if interface.2_39.poe = 0%
+   	no power-over-ethernet
+   %endif%
+exit
+interface 2/40
+   %if interface.2_40.state=disable%
+	disable
+   %endif%
+   %if interface.2_40.name%
+     name %interface.2_40.name% 
+   %endif%
+   %if interface.2_40.poe = 0%
+   	no power-over-ethernet
+   %endif%
+exit
+interface 2/41
+   %if interface.2_41.state=disable%
+	disable
+   %endif%
+   %if interface.2_41.name%
+     name %interface.2_41.name% 
+   %endif%
+   %if interface.2_41.poe = 0%
+   	no power-over-ethernet
+   %endif%
+exit
+interface 2/42
+   %if interface.2_42.state=disable%
+	disable
+   %endif%
+   %if interface.2_42.name%
+     name %interface.2_42.name% 
+   %endif%
+   %if interface.2_42.poe = 0%
+   	no power-over-ethernet
+   %endif%
+exit
+interface 2/43
+   %if interface.2_43.state=disable%
+	disable
+   %endif%
+   %if interface.2_43.name%
+     name %interface.2_43.name% 
+   %endif%
+   %if interface.2_43.poe = 0%
+   	no power-over-ethernet
+   %endif%
+exit
+interface 2/44
+   %if interface.2_44.state=disable%
+	disable
+   %endif%
+   %if interface.2_44.name%
+     name %interface.2_44.name% 
+   %endif%
+   %if interface.2_44.poe = 0%
+   	no power-over-ethernet
+   %endif%
+exit
+interface 2/45
+   %if interface.2_45.state=disable%
+	disable
+   %endif%
+   %if interface.2_45.name%
+     name %interface.2_45.name% 
+   %endif%
+   %if interface.2_45.poe = 0%
+   	no power-over-ethernet
+   %endif%
+exit
+interface 2/46
+   %if interface.2_46.state=disable%
+	disable
+   %endif%
+   %if interface.2_46.name%
+     name %interface.2_46.name% 
+   %endif%
+   %if interface.2_46.poe = 0%
+   	no power-over-ethernet
+   %endif%
+exit
+interface 2/47
+   %if interface.2_47.state=disable%
+	disable
+   %endif%
+   %if interface.2_47.name%
+     name %interface.2_47.name% 
+   %endif%
+   %if interface.2_47.poe = 0%
+   	no power-over-ethernet
+   %endif%
+exit
+interface 2/48
+   %if interface.2_48.state=disable%
+	disable
+   %endif%
+   %if interface.2_48.name%
+     name %interface.2_48.name% 
+   %endif%
+   %if interface.2_48.poe = 0%
+   	no power-over-ethernet
+   %endif%
+exit
+%endif%
+%if flex.a.member.2%
+%if flex.a.member.2 = JL081A%
+interface 2/A1
+   %interface.2_A1.state%
+   %if interface.2_A1.name%
+     name %interface.2_A1.name% 
+   %endif%
+   %if interface.2_A1.poe = no%
+   	no power-over-ethernet
+   %endif%
+exit
+interface 2/A2
+   %interface.2_A2.state%
+   %if interface.2_A2.name%
+     name %interface.2_A2.name% 
+   %endif%
+   %if interface.2_A2.poe = no%
+   	no power-over-ethernet
+   %endif%
+exit
+interface 2/A3
+   %interface.2_A3.state%
+   %if interface.2_A3.name%
+     name %interface.2_A3.name% 
+   %endif%
+   %if interface.2_A3.poe = no%
+   	no power-over-ethernet
+   %endif%
+exit
+interface 2/A4
+   %interface.2_A4.state%
+   %if interface.2_A4.name%
+     name %interface.2_A4.name% 
+   %endif%
+   %if interface.2_A4.poe = no%
+   	no power-over-ethernet
+   %endif%
+exit
+%endif%
+%if flex.a.member.2 = JL083A%
+interface 2/A1
+   %interface.2_A1.state%
+   %if interface.2_A1.name%
+     name %interface.2_A1.name% 
+   %endif%
+exit
+interface 2/A2
+   %interface.2_A2.state%
+   %if interface.2_A2.name%
+     name %interface.2_A2.name% 
+   %endif%
+exit
+interface 2/A3
+   %interface.2_A3.state%
+   %if interface.2_A3.name%
+     name %interface.2_A3.name% 
+   %endif%
+exit
+interface 2/A4
+   %interface.2_A4.state%
+   %if interface.2_A4.name%
+     name %interface.2_A4.name% 
+   %endif%
+exit
+%endif%
+%if flex.a.member.2 = JL078A%
+interface 2/A1
+   %interface.2_A1.state%
+   %if interface.2_A1.name%
+     name %interface.2_A1.name% 
+   %endif%
+exit
+%endif%
+%endif%
+%endif%
+%if _member.3.ports%
+interface 3/1
+   %if interface.3_1.state=disable%
+	disable
+   %endif%
+   %if interface.3_1.name%
+     name %interface.3_1.name% 
+   %endif%
+   %if interface.3_1.poe = 0%
+   	no power-over-ethernet
+   %endif%
+exit
+interface 3/2
+   %if interface.3_2.state=disable%
+	disable
+   %endif%
+   %if interface.3_2.name%
+     name %interface.3_2.name% 
+   %endif%
+   %if interface.3_2.poe = 0%
+   	no power-over-ethernet
+   %endif%
+exit
+interface 3/3
+   %if interface.3_3.state=disable%
+	disable
+   %endif%
+   %if interface.3_3.name%
+     name %interface.3_3.name% 
+   %endif%
+   %if interface.3_3.poe = 0%
+   	no power-over-ethernet
+   %endif%
+exit
+interface 3/4
+   %if interface.3_4.state=disable%
+	disable
+   %endif%
+   %if interface.3_4.name%
+     name %interface.3_4.name% 
+   %endif%
+   %if interface.3_4.poe = 0%
+   	no power-over-ethernet
+   %endif%
+exit
+interface 3/5
+   %if interface.3_5.state=disable%
+	disable
+   %endif%
+   %if interface.3_5.name%
+     name %interface.3_5.name% 
+   %endif%
+   %if interface.3_5.poe = 0%
+   	no power-over-ethernet
+   %endif%
+exit
+interface 3/6
+   %if interface.3_6.state=disable%
+	disable
+   %endif%
+   %if interface.3_6.name%
+     name %interface.3_6.name% 
+   %endif%
+   %if interface.3_6.poe = 0%
+   	no power-over-ethernet
+   %endif%
+exit
+interface 3/7
+   %if interface.3_7.state=disable%
+	disable
+   %endif%
+   %if interface.3_7.name%
+     name %interface.3_7.name% 
+   %endif%
+   %if interface.3_7.poe = 0%
+   	no power-over-ethernet
+   %endif%
+exit
+interface 3/8
+   %if interface.3_8.state=disable%
+	disable
+   %endif%
+   %if interface.3_8.name%
+     name %interface.3_8.name% 
+   %endif%
+   %if interface.3_8.poe = 0%
+   	no power-over-ethernet
+   %endif%
+exit
+interface 3/9
+   %if interface.3_9.state=disable%
+	disable
+   %endif%
+   %if interface.3_9.name%
+     name %interface.3_9.name% 
+   %endif%
+   %if interface.3_9.poe = 0%
+   	no power-over-ethernet
+   %endif%
+exit
+interface 3/10
+   %if interface.3_10.state=disable%
+	disable
+   %endif%
+   %if interface.3_10.name%
+     name %interface.3_10.name% 
+   %endif%
+   %if interface.3_10.poe = 0%
+   	no power-over-ethernet
+   %endif%
+exit
+interface 3/11
+   %if interface.3_11.state=disable%
+	disable
+   %endif%
+   %if interface.3_11.name%
+     name %interface.3_11.name% 
+   %endif%
+   %if interface.3_11.poe = 0%
+   	no power-over-ethernet
+   %endif%
+exit
+interface 3/12
+   %if interface.3_12.state=disable%
+	disable
+   %endif%
+   %if interface.3_12.name%
+     name %interface.3_12.name% 
+   %endif%
+   %if interface.3_12.poe = 0%
+   	no power-over-ethernet
+   %endif%
+exit
+interface 3/13
+   %if interface.3_13.state=disable%
+	disable
+   %endif%
+   %if interface.3_13.name%
+     name %interface.3_13.name% 
+   %endif%
+   %if interface.3_13.poe = 0%
+   	no power-over-ethernet
+   %endif%
+exit
+interface 3/14
+   %if interface.3_14.state=disable%
+	disable
+   %endif%
+   %if interface.3_14.name%
+     name %interface.3_14.name% 
+   %endif%
+   %if interface.3_14.poe = 0%
+   	no power-over-ethernet
+   %endif%
+exit
+interface 3/15
+   %if interface.3_15.state=disable%
+	disable
+   %endif%
+   %if interface.3_15.name%
+     name %interface.3_15.name% 
+   %endif%
+   %if interface.3_15.poe = 0%
+   	no power-over-ethernet
+   %endif%
+exit
+interface 3/16
+   %if interface.3_16.state=disable%
+	disable
+   %endif%
+   %if interface.3_16.name%
+     name %interface.3_16.name% 
+   %endif%
+   %if interface.3_16.poe = 0%
+   	no power-over-ethernet
+   %endif%
+exit
+interface 3/17
+   %if interface.3_17.state=disable%
+	disable
+   %endif%
+   %if interface.3_17.name%
+     name %interface.3_17.name% 
+   %endif%
+   %if interface.3_17.poe = 0%
+   	no power-over-ethernet
+   %endif%
+exit
+interface 3/18
+   %if interface.3_18.state=disable%
+	disable
+   %endif%
+   %if interface.3_18.name%
+     name %interface.3_18.name% 
+   %endif%
+   %if interface.3_18.poe = 0%
+   	no power-over-ethernet
+   %endif%
+exit
+interface 3/19
+   %if interface.3_19.state=disable%
+	disable
+   %endif%
+   %if interface.3_19.name%
+     name %interface.3_19.name% 
+   %endif%
+   %if interface.3_19.poe = 0%
+   	no power-over-ethernet
+   %endif%
+exit
+interface 3/20
+   %if interface.3_20.state=disable%
+	disable
+   %endif%
+   %if interface.3_20.name%
+     name %interface.3_20.name% 
+   %endif%
+   %if interface.3_20.poe = 0%
+   	no power-over-ethernet
+   %endif%
+exit
+interface 3/21
+   %if interface.3_21.state=disable%
+	disable
+   %endif%
+   %if interface.3_21.name%
+     name %interface.3_21.name% 
+   %endif%
+   %if interface.3_21.poe = 0%
+   	no power-over-ethernet
+   %endif%
+exit
+interface 3/22
+   %if interface.3_22.state=disable%
+	disable
+   %endif%
+   %if interface.3_22.name%
+     name %interface.3_22.name% 
+   %endif%
+   %if interface.3_22.poe = 0%
+   	no power-over-ethernet
+   %endif%
+exit
+interface 3/23
+   %if interface.3_23.state=disable%
+	disable
+   %endif%
+   %if interface.3_23.name%
+     name %interface.3_23.name% 
+   %endif%
+   %if interface.3_23.poe = 0%
+   	no power-over-ethernet
+   %endif%
+exit
+interface 3/24
+   %if interface.3_24.state=disable%
+	disable
+   %endif%
+   %if interface.3_24.name%
+     name %interface.3_24.name% 
+   %endif%
+   %if interface.3_24.poe = 0%
+   	no power-over-ethernet
+   %endif%
+exit
+%if _member.3.ports = 48%
+interface 3/25
+   %if interface.3_25.state=disable%
+	disable
+   %endif%
+   %if interface.3_25.name%
+     name %interface.3_25.name% 
+   %endif%
+   %if interface.3_25.poe = 0%
+   	no power-over-ethernet
+   %endif%
+exit
+interface 3/26
+   %if interface.3_26.state=disable%
+	disable
+   %endif%
+   %if interface.3_26.name%
+     name %interface.3_26.name% 
+   %endif%
+   %if interface.3_26.poe = 0%
+   	no power-over-ethernet
+   %endif%
+exit
+interface 3/27
+   %if interface.3_27.state=disable%
+	disable
+   %endif%
+   %if interface.3_27.name%
+     name %interface.3_27.name% 
+   %endif%
+   %if interface.3_27.poe = 0%
+   	no power-over-ethernet
+   %endif%
+exit
+interface 3/28
+   %if interface.3_28.state=disable%
+	disable
+   %endif%
+   %if interface.3_28.name%
+     name %interface.3_28.name% 
+   %endif%
+   %if interface.3_28.poe = 0%
+   	no power-over-ethernet
+   %endif%
+exit
+interface 3/29
+   %if interface.3_29.state=disable%
+	disable
+   %endif%
+   %if interface.3_29.name%
+     name %interface.3_29.name% 
+   %endif%
+   %if interface.3_29.poe = 0%
+   	no power-over-ethernet
+   %endif%
+exit
+interface 3/30
+   %if interface.3_30.state=disable%
+	disable
+   %endif%
+   %if interface.3_30.name%
+     name %interface.3_30.name% 
+   %endif%
+   %if interface.3_30.poe = 0%
+   	no power-over-ethernet
+   %endif%
+exit
+interface 3/31
+    %if interface.3_31.state=disable%
+	disable
+   %endif%
+   %if interface.3_31.name%
+     name %interface.3_31.name% 
+   %endif%
+   %if interface.3_31.poe = 0%
+   	no power-over-ethernet
+   %endif%
+exit
+interface 3/32
+   %if interface.3_32.state=disable%
+	disable
+   %endif%
+   %if interface.3_32.name%
+     name %interface.3_32.name% 
+   %endif%
+   %if interface.3_32.poe = 0%
+   	no power-over-ethernet
+   %endif%
+exit
+interface 3/33
+   %if interface.3_33.state=disable%
+	disable
+   %endif%
+   %if interface.3_33.name%
+     name %interface.3_33.name% 
+   %endif%
+   %if interface.3_33.poe = 0%
+   	no power-over-ethernet
+   %endif%
+exit
+interface 3/34
+   %if interface.3_34.state=disable%
+	disable
+   %endif%
+   %if interface.3_34.name%
+     name %interface.3_34.name% 
+   %endif%
+   %if interface.3_34.poe = 0%
+   	no power-over-ethernet
+   %endif%
+exit
+interface 3/35
+   %if interface.3_35.state=disable%
+	disable
+   %endif%
+   %if interface.3_35.name%
+     name %interface.3_35.name% 
+   %endif%
+   %if interface.3_35.poe = 0%
+   	no power-over-ethernet
+   %endif%
+exit
+interface 3/36
+   %if interface.3_36.state=disable%
+	disable
+   %endif%
+   %if interface.3_36.name%
+     name %interface.3_36.name% 
+   %endif%
+   %if interface.3_36.poe = 0%
+   	no power-over-ethernet
+   %endif%
+exit
+interface 3/37
+   %if interface.3_37.state=disable%
+	disable
+   %endif%
+   %if interface.3_37.name%
+     name %interface.3_37.name% 
+   %endif%
+   %if interface.3_37.poe = 0%
+   	no power-over-ethernet
+   %endif%
+exit
+interface 3/38
+   %if interface.3_38.state=disable%
+	disable
+   %endif%
+   %if interface.3_38.name%
+     name %interface.3_38.name% 
+   %endif%
+   %if interface.3_38.poe = 0%
+   	no power-over-ethernet
+   %endif%
+exit
+interface 3/39
+   %if interface.3_39.state=disable%
+	disable
+   %endif%
+   %if interface.3_39.name%
+     name %interface.3_39.name% 
+   %endif%
+   %if interface.3_39.poe = 0%
+   	no power-over-ethernet
+   %endif%
+exit
+interface 3/40
+   %if interface.3_40.state=disable%
+	disable
+   %endif%
+   %if interface.3_40.name%
+     name %interface.3_40.name% 
+   %endif%
+   %if interface.3_40.poe = 0%
+   	no power-over-ethernet
+   %endif%
+exit
+interface 3/41
+   %if interface.3_41.state=disable%
+	disable
+   %endif%
+   %if interface.3_41.name%
+     name %interface.3_41.name% 
+   %endif%
+   %if interface.3_41.poe = 0%
+   	no power-over-ethernet
+   %endif%
+exit
+interface 3/42
+   %if interface.3_42.state=disable%
+	disable
+   %endif%
+   %if interface.3_42.name%
+     name %interface.3_42.name% 
+   %endif%
+   %if interface.3_42.poe = 0%
+   	no power-over-ethernet
+   %endif%
+exit
+interface 3/43
+   %if interface.3_43.state=disable%
+	disable
+   %endif%
+   %if interface.3_43.name%
+     name %interface.3_43.name% 
+   %endif%
+   %if interface.3_43.poe = 0%
+   	no power-over-ethernet
+   %endif%
+exit
+interface 3/44
+   %if interface.3_44.state=disable%
+	disable
+   %endif%
+   %if interface.3_44.name%
+     name %interface.3_44.name% 
+   %endif%
+   %if interface.3_44.poe = 0%
+   	no power-over-ethernet
+   %endif%
+exit
+interface 3/45
+   %if interface.3_45.state=disable%
+	disable
+   %endif%
+   %if interface.3_45.name%
+     name %interface.3_45.name% 
+   %endif%
+   %if interface.3_45.poe = 0%
+   	no power-over-ethernet
+   %endif%
+exit
+interface 3/46
+   %if interface.3_46.state=disable%
+	disable
+   %endif%
+   %if interface.3_46.name%
+     name %interface.3_46.name% 
+   %endif%
+   %if interface.3_46.poe = 0%
+   	no power-over-ethernet
+   %endif%
+exit
+interface 3/47
+   %if interface.3_47.state=disable%
+	disable
+   %endif%
+   %if interface.3_47.name%
+     name %interface.3_47.name% 
+   %endif%
+   %if interface.3_47.poe = 0%
+   	no power-over-ethernet
+   %endif%
+exit
+interface 3/48
+   %if interface.3_48.state=disable%
+	disable
+   %endif%
+   %if interface.3_48.name%
+     name %interface.3_48.name% 
+   %endif%
+   %if interface.3_48.poe = 0%
+   	no power-over-ethernet
+   %endif%
+exit
+%endif%
+%if flex.a.member.3%
+%if flex.a.member.3 = JL081A%
+interface 3/A1
+   %interface.3_A1.state%
+   %if interface.3_A1.name%
+     name %interface.3_A1.name% 
+   %endif%
+   %if interface.3_A1.poe = no%
+   	no power-over-ethernet
+   %endif%
+exit
+interface 3/A2
+   %interface.3_A2.state%
+   %if interface.3_A2.name%
+     name %interface.3_A2.name% 
+   %endif%
+   %if interface.3_A2.poe = no%
+   	no power-over-ethernet
+   %endif%
+exit
+interface 3/A3
+   %interface.3_A3.state%
+   %if interface.3_A3.name%
+     name %interface.3_A3.name% 
+   %endif%
+   %if interface.3_A3.poe = no%
+   	no power-over-ethernet
+   %endif%
+exit
+interface 3/A4
+   %interface.3_A4.state%
+   %if interface.3_A4.name%
+     name %interface.3_A4.name% 
+   %endif%
+   %if interface.3_A4.poe = no%
+   	no power-over-ethernet
+   %endif%
+exit
+%endif%
+%if flex.a.member.3 = JL083A%
+interface 3/A1
+   %interface.3_A1.state%
+   %if interface.3_A1.name%
+     name %interface.3_A1.name% 
+   %endif%
+exit
+interface 3/A2
+   %interface.3_A2.state%
+   %if interface.3_A2.name%
+     name %interface.3_A2.name% 
+   %endif%
+exit
+interface 3/A3
+   %interface.3_A3.state%
+   %if interface.3_A3.name%
+     name %interface.3_A3.name% 
+   %endif%
+exit
+interface 3/A4
+   %interface.3_A4.state%
+   %if interface.3_A4.name%
+     name %interface.3_A4.name% 
+   %endif%
+exit
+%endif%
+%if flex.a.member.3 = JL078A%
+interface 3/A1
+   %interface.3_A1.state%
+   %if interface.3_A1.name%
+     name %interface.3_A1.name% 
+   %endif%
+exit
+%endif%
+%endif%
+%endif%
+%if _member.4.ports%
+interface 4/1
+   %if interface.4_1.state=disable%
+	disable
+   %endif%
+   %if interface.4_1.name%
+     name %interface.4_1.name% 
+   %endif%
+   %if interface.4_1.poe = 0%
+   	no power-over-ethernet
+   %endif%
+exit
+interface 4/2
+   %if interface.4_2.state=disable%
+	disable
+   %endif%
+   %if interface.4_2.name%
+     name %interface.4_2.name% 
+   %endif%
+   %if interface.4_2.poe = 0%
+   	no power-over-ethernet
+   %endif%
+exit
+interface 4/3
+   %if interface.4_3.state=disable%
+	disable
+   %endif%
+   %if interface.4_3.name%
+     name %interface.4_3.name% 
+   %endif%
+   %if interface.4_3.poe = 0%
+   	no power-over-ethernet
+   %endif%
+exit
+interface 4/4
+   %if interface.4_4.state=disable%
+	disable
+   %endif%
+   %if interface.4_4.name%
+     name %interface.4_4.name% 
+   %endif%
+   %if interface.4_4.poe = 0%
+   	no power-over-ethernet
+   %endif%
+exit
+interface 4/5
+   %if interface.4_5.state=disable%
+	disable
+   %endif%
+   %if interface.4_5.name%
+     name %interface.4_5.name% 
+   %endif%
+   %if interface.4_5.poe = 0%
+   	no power-over-ethernet
+   %endif%
+exit
+interface 4/6
+   %if interface.4_6.state=disable%
+	disable
+   %endif%
+   %if interface.4_6.name%
+     name %interface.4_6.name% 
+   %endif%
+   %if interface.4_6.poe = 0%
+   	no power-over-ethernet
+   %endif%
+exit
+interface 4/7
+   %if interface.4_7.state=disable%
+	disable
+   %endif%
+   %if interface.4_7.name%
+     name %interface.4_7.name% 
+   %endif%
+   %if interface.4_7.poe = 0%
+   	no power-over-ethernet
+   %endif%
+exit
+interface 4/8
+   %if interface.4_8.state=disable%
+	disable
+   %endif%
+   %if interface.4_8.name%
+     name %interface.4_8.name% 
+   %endif%
+   %if interface.4_8.poe = 0%
+   	no power-over-ethernet
+   %endif%
+exit
+interface 4/9
+   %if interface.4_9.state=disable%
+	disable
+   %endif%
+   %if interface.4_9.name%
+     name %interface.4_9.name% 
+   %endif%
+   %if interface.4_9.poe = 0%
+   	no power-over-ethernet
+   %endif%
+exit
+interface 4/10
+   %if interface.4_10.state=disable%
+	disable
+   %endif%
+   %if interface.4_10.name%
+     name %interface.4_10.name% 
+   %endif%
+   %if interface.4_10.poe = 0%
+   	no power-over-ethernet
+   %endif%
+exit
+interface 4/11
+   %if interface.4_11.state=disable%
+	disable
+   %endif%
+   %if interface.4_11.name%
+     name %interface.4_11.name% 
+   %endif%
+   %if interface.4_11.poe = 0%
+   	no power-over-ethernet
+   %endif%
+exit
+interface 4/12
+   %if interface.4_12.state=disable%
+	disable
+   %endif%
+   %if interface.4_12.name%
+     name %interface.4_12.name% 
+   %endif%
+   %if interface.4_12.poe = 0%
+   	no power-over-ethernet
+   %endif%
+exit
+interface 4/13
+   %if interface.4_13.state=disable%
+	disable
+   %endif%
+   %if interface.4_13.name%
+     name %interface.4_13.name% 
+   %endif%
+   %if interface.4_13.poe = 0%
+   	no power-over-ethernet
+   %endif%
+exit
+interface 4/14
+   %if interface.4_14.state=disable%
+	disable
+   %endif%
+   %if interface.4_14.name%
+     name %interface.4_14.name% 
+   %endif%
+   %if interface.4_14.poe = 0%
+   	no power-over-ethernet
+   %endif%
+exit
+interface 4/15
+   %if interface.4_15.state=disable%
+	disable
+   %endif%
+   %if interface.4_15.name%
+     name %interface.4_15.name% 
+   %endif%
+   %if interface.4_15.poe = 0%
+   	no power-over-ethernet
+   %endif%
+exit
+interface 4/16
+   %if interface.4_16.state=disable%
+	disable
+   %endif%
+   %if interface.4_16.name%
+     name %interface.4_16.name% 
+   %endif%
+   %if interface.4_16.poe = 0%
+   	no power-over-ethernet
+   %endif%
+exit
+interface 4/17
+   %if interface.4_17.state=disable%
+	disable
+   %endif%
+   %if interface.4_17.name%
+     name %interface.4_17.name% 
+   %endif%
+   %if interface.4_17.poe = 0%
+   	no power-over-ethernet
+   %endif%
+exit
+interface 4/18
+   %if interface.4_18.state=disable%
+	disable
+   %endif%
+   %if interface.4_18.name%
+     name %interface.4_18.name% 
+   %endif%
+   %if interface.4_18.poe = 0%
+   	no power-over-ethernet
+   %endif%
+exit
+interface 4/19
+   %if interface.4_19.state=disable%
+	disable
+   %endif%
+   %if interface.4_19.name%
+     name %interface.4_19.name% 
+   %endif%
+   %if interface.4_19.poe = 0%
+   	no power-over-ethernet
+   %endif%
+exit
+interface 4/20
+   %if interface.4_20.state=disable%
+	disable
+   %endif%
+   %if interface.4_20.name%
+     name %interface.4_20.name% 
+   %endif%
+   %if interface.4_20.poe = 0%
+   	no power-over-ethernet
+   %endif%
+exit
+interface 4/21
+   %if interface.4_21.state=disable%
+	disable
+   %endif%
+   %if interface.4_21.name%
+     name %interface.4_21.name% 
+   %endif%
+   %if interface.4_21.poe = 0%
+   	no power-over-ethernet
+   %endif%
+exit
+interface 4/22
+   %if interface.4_22.state=disable%
+	disable
+   %endif%
+   %if interface.4_22.name%
+     name %interface.4_22.name% 
+   %endif%
+   %if interface.4_22.poe = 0%
+   	no power-over-ethernet
+   %endif%
+exit
+interface 4/23
+   %if interface.4_23.state=disable%
+	disable
+   %endif%
+   %if interface.4_23.name%
+     name %interface.4_23.name% 
+   %endif%
+   %if interface.4_23.poe = 0%
+   	no power-over-ethernet
+   %endif%
+exit
+interface 4/24
+   %if interface.4_24.state=disable%
+	disable
+   %endif%
+   %if interface.4_24.name%
+     name %interface.4_24.name% 
+   %endif%
+   %if interface.4_24.poe = 0%
+   	no power-over-ethernet
+   %endif%
+exit
+%if _member.4.ports = 48%
+interface 4/25
+   %if interface.4_25.state=disable%
+	disable
+   %endif%
+   %if interface.4_25.name%
+     name %interface.4_25.name% 
+   %endif%
+   %if interface.4_25.poe = 0%
+   	no power-over-ethernet
+   %endif%
+exit
+interface 4/26
+   %if interface.4_26.state=disable%
+	disable
+   %endif%
+   %if interface.4_26.name%
+     name %interface.4_26.name% 
+   %endif%
+   %if interface.4_26.poe = 0%
+   	no power-over-ethernet
+   %endif%
+exit
+interface 4/27
+   %if interface.4_27.state=disable%
+	disable
+   %endif%
+   %if interface.4_27.name%
+     name %interface.4_27.name% 
+   %endif%
+   %if interface.4_27.poe = 0%
+   	no power-over-ethernet
+   %endif%
+exit
+interface 4/28
+   %if interface.4_28.state=disable%
+	disable
+   %endif%
+   %if interface.4_28.name%
+     name %interface.4_28.name% 
+   %endif%
+   %if interface.4_28.poe = 0%
+   	no power-over-ethernet
+   %endif%
+exit
+interface 4/29
+   %if interface.4_29.state=disable%
+	disable
+   %endif%
+   %if interface.4_29.name%
+     name %interface.4_29.name% 
+   %endif%
+   %if interface.4_29.poe = 0%
+   	no power-over-ethernet
+   %endif%
+exit
+interface 4/30
+   %if interface.4_30.state=disable%
+	disable
+   %endif%
+   %if interface.4_30.name%
+     name %interface.4_30.name% 
+   %endif%
+   %if interface.4_30.poe = 0%
+   	no power-over-ethernet
+   %endif%
+exit
+interface 4/31
+    %if interface.4_31.state=disable%
+	disable
+   %endif%
+   %if interface.4_31.name%
+     name %interface.4_31.name% 
+   %endif%
+   %if interface.4_31.poe = 0%
+   	no power-over-ethernet
+   %endif%
+exit
+interface 4/32
+   %if interface.4_32.state=disable%
+	disable
+   %endif%
+   %if interface.4_32.name%
+     name %interface.4_32.name% 
+   %endif%
+   %if interface.4_32.poe = 0%
+   	no power-over-ethernet
+   %endif%
+exit
+interface 4/33
+   %if interface.4_33.state=disable%
+	disable
+   %endif%
+   %if interface.4_33.name%
+     name %interface.4_33.name% 
+   %endif%
+   %if interface.4_33.poe = 0%
+   	no power-over-ethernet
+   %endif%
+exit
+interface 4/34
+   %if interface.4_34.state=disable%
+	disable
+   %endif%
+   %if interface.4_34.name%
+     name %interface.4_34.name% 
+   %endif%
+   %if interface.4_34.poe = 0%
+   	no power-over-ethernet
+   %endif%
+exit
+interface 4/35
+   %if interface.4_35.state=disable%
+	disable
+   %endif%
+   %if interface.4_35.name%
+     name %interface.4_35.name% 
+   %endif%
+   %if interface.4_35.poe = 0%
+   	no power-over-ethernet
+   %endif%
+exit
+interface 4/36
+   %if interface.4_36.state=disable%
+	disable
+   %endif%
+   %if interface.4_36.name%
+     name %interface.4_36.name% 
+   %endif%
+   %if interface.4_36.poe = 0%
+   	no power-over-ethernet
+   %endif%
+exit
+interface 4/37
+   %if interface.4_37.state=disable%
+	disable
+   %endif%
+   %if interface.4_37.name%
+     name %interface.4_37.name% 
+   %endif%
+   %if interface.4_37.poe = 0%
+   	no power-over-ethernet
+   %endif%
+exit
+interface 4/38
+   %if interface.4_38.state=disable%
+	disable
+   %endif%
+   %if interface.4_38.name%
+     name %interface.4_38.name% 
+   %endif%
+   %if interface.4_38.poe = 0%
+   	no power-over-ethernet
+   %endif%
+exit
+interface 4/39
+   %if interface.4_39.state=disable%
+	disable
+   %endif%
+   %if interface.4_39.name%
+     name %interface.4_39.name% 
+   %endif%
+   %if interface.4_39.poe = 0%
+   	no power-over-ethernet
+   %endif%
+exit
+interface 4/40
+   %if interface.4_40.state=disable%
+	disable
+   %endif%
+   %if interface.4_40.name%
+     name %interface.4_40.name% 
+   %endif%
+   %if interface.4_40.poe = 0%
+   	no power-over-ethernet
+   %endif%
+exit
+interface 4/41
+   %if interface.4_41.state=disable%
+	disable
+   %endif%
+   %if interface.4_41.name%
+     name %interface.4_41.name% 
+   %endif%
+   %if interface.4_41.poe = 0%
+   	no power-over-ethernet
+   %endif%
+exit
+interface 4/42
+   %if interface.4_42.state=disable%
+	disable
+   %endif%
+   %if interface.4_42.name%
+     name %interface.4_42.name% 
+   %endif%
+   %if interface.4_42.poe = 0%
+   	no power-over-ethernet
+   %endif%
+exit
+interface 4/43
+   %if interface.4_43.state=disable%
+	disable
+   %endif%
+   %if interface.4_43.name%
+     name %interface.4_43.name% 
+   %endif%
+   %if interface.4_43.poe = 0%
+   	no power-over-ethernet
+   %endif%
+exit
+interface 4/44
+   %if interface.4_44.state=disable%
+	disable
+   %endif%
+   %if interface.4_44.name%
+     name %interface.4_44.name% 
+   %endif%
+   %if interface.4_44.poe = 0%
+   	no power-over-ethernet
+   %endif%
+exit
+interface 4/45
+   %if interface.4_45.state=disable%
+	disable
+   %endif%
+   %if interface.4_45.name%
+     name %interface.4_45.name% 
+   %endif%
+   %if interface.4_45.poe = 0%
+   	no power-over-ethernet
+   %endif%
+exit
+interface 4/46
+   %if interface.4_46.state=disable%
+	disable
+   %endif%
+   %if interface.4_46.name%
+     name %interface.4_46.name% 
+   %endif%
+   %if interface.4_46.poe = 0%
+   	no power-over-ethernet
+   %endif%
+exit
+interface 4/47
+   %if interface.4_47.state=disable%
+	disable
+   %endif%
+   %if interface.4_47.name%
+     name %interface.4_47.name% 
+   %endif%
+   %if interface.4_47.poe = 0%
+   	no power-over-ethernet
+   %endif%
+exit
+interface 4/48
+   %if interface.4_48.state=disable%
+	disable
+   %endif%
+   %if interface.4_48.name%
+     name %interface.4_48.name% 
+   %endif%
+   %if interface.4_48.poe = 0%
+   	no power-over-ethernet
+   %endif%
+exit
+%endif%
+%if flex.a.member.4%
+%if flex.a.member.4 = JL081A%
+interface 4/A1
+   %interface.4_A1.state%
+   %if interface.4_A1.name%
+     name %interface.4_A1.name% 
+   %endif%
+   %if interface.4_A1.poe = no%
+   	no power-over-ethernet
+   %endif%
+exit
+interface 4/A2
+   %interface.4_A2.state%
+   %if interface.4_A2.name%
+     name %interface.4_A2.name% 
+   %endif%
+   %if interface.4_A2.poe = no%
+   	no power-over-ethernet
+   %endif%
+exit
+interface 4/A3
+   %interface.4_A3.state%
+   %if interface.4_A3.name%
+     name %interface.4_A3.name% 
+   %endif%
+   %if interface.4_A3.poe = no%
+   	no power-over-ethernet
+   %endif%
+exit
+interface 4/A4
+   %interface.4_A4.state%
+   %if interface.4_A4.name%
+     name %interface.4_A4.name% 
+   %endif%
+   %if interface.4_A4.poe = no%
+   	no power-over-ethernet
+   %endif%
+exit
+%endif%
+%if flex.a.member.4 = JL083A%
+interface 4/A1
+   %interface.4_A1.state%
+   %if interface.4_A1.name%
+     name %interface.4_A1.name% 
+   %endif%
+exit
+interface 4/A2
+   %interface.4_A2.state%
+   %if interface.4_A2.name%
+     name %interface.4_A2.name% 
+   %endif%
+exit
+interface 4/A3
+   %interface.4_A3.state%
+   %if interface.4_A3.name%
+     name %interface.4_A3.name% 
+   %endif%
+exit
+interface 4/A4
+   %interface.4_A4.state%
+   %if interface.4_A4.name%
+     name %interface.4_A4.name% 
+   %endif%
+exit
+%endif%
+%if flex.a.member.4 = JL078A%
+interface 4/A1
+   %interface.4_A1.state%
+   %if interface.4_A1.name%
+     name %interface.4_A1.name% 
+   %endif%
+exit
+%endif%
+%endif%
+%endif%
+%if _member.5.ports%
+interface 5/1
+   %if interface.5_1.state=disable%
+	disable
+   %endif%
+   %if interface.5_1.name%
+     name %interface.5_1.name% 
+   %endif%
+   %if interface.5_1.poe = 0%
+   	no power-over-ethernet
+   %endif%
+exit
+interface 5/2
+   %if interface.5_2.state=disable%
+	disable
+   %endif%
+   %if interface.5_2.name%
+     name %interface.5_2.name% 
+   %endif%
+   %if interface.5_2.poe = 0%
+   	no power-over-ethernet
+   %endif%
+exit
+interface 5/3
+   %if interface.5_3.state=disable%
+	disable
+   %endif%
+   %if interface.5_3.name%
+     name %interface.5_3.name% 
+   %endif%
+   %if interface.5_3.poe = 0%
+   	no power-over-ethernet
+   %endif%
+exit
+interface 5/4
+   %if interface.5_4.state=disable%
+	disable
+   %endif%
+   %if interface.5_4.name%
+     name %interface.5_4.name% 
+   %endif%
+   %if interface.5_4.poe = 0%
+   	no power-over-ethernet
+   %endif%
+exit
+interface 5/5
+   %if interface.5_5.state=disable%
+	disable
+   %endif%
+   %if interface.5_5.name%
+     name %interface.5_5.name% 
+   %endif%
+   %if interface.5_5.poe = 0%
+   	no power-over-ethernet
+   %endif%
+exit
+interface 5/6
+   %if interface.5_6.state=disable%
+	disable
+   %endif%
+   %if interface.5_6.name%
+     name %interface.5_6.name% 
+   %endif%
+   %if interface.5_6.poe = 0%
+   	no power-over-ethernet
+   %endif%
+exit
+interface 5/7
+   %if interface.5_7.state=disable%
+	disable
+   %endif%
+   %if interface.5_7.name%
+     name %interface.5_7.name% 
+   %endif%
+   %if interface.5_7.poe = 0%
+   	no power-over-ethernet
+   %endif%
+exit
+interface 5/8
+   %if interface.5_8.state=disable%
+	disable
+   %endif%
+   %if interface.5_8.name%
+     name %interface.5_8.name% 
+   %endif%
+   %if interface.5_8.poe = 0%
+   	no power-over-ethernet
+   %endif%
+exit
+interface 5/9
+   %if interface.5_9.state=disable%
+	disable
+   %endif%
+   %if interface.5_9.name%
+     name %interface.5_9.name% 
+   %endif%
+   %if interface.5_9.poe = 0%
+   	no power-over-ethernet
+   %endif%
+exit
+interface 5/10
+   %if interface.5_10.state=disable%
+	disable
+   %endif%
+   %if interface.5_10.name%
+     name %interface.5_10.name% 
+   %endif%
+   %if interface.5_10.poe = 0%
+   	no power-over-ethernet
+   %endif%
+exit
+interface 5/11
+   %if interface.5_11.state=disable%
+	disable
+   %endif%
+   %if interface.5_11.name%
+     name %interface.5_11.name% 
+   %endif%
+   %if interface.5_11.poe = 0%
+   	no power-over-ethernet
+   %endif%
+exit
+interface 5/12
+   %if interface.5_12.state=disable%
+	disable
+   %endif%
+   %if interface.5_12.name%
+     name %interface.5_12.name% 
+   %endif%
+   %if interface.5_12.poe = 0%
+   	no power-over-ethernet
+   %endif%
+exit
+interface 5/13
+   %if interface.5_13.state=disable%
+	disable
+   %endif%
+   %if interface.5_13.name%
+     name %interface.5_13.name% 
+   %endif%
+   %if interface.5_13.poe = 0%
+   	no power-over-ethernet
+   %endif%
+exit
+interface 5/14
+   %if interface.5_14.state=disable%
+	disable
+   %endif%
+   %if interface.5_14.name%
+     name %interface.5_14.name% 
+   %endif%
+   %if interface.5_14.poe = 0%
+   	no power-over-ethernet
+   %endif%
+exit
+interface 5/15
+   %if interface.5_15.state=disable%
+	disable
+   %endif%
+   %if interface.5_15.name%
+     name %interface.5_15.name% 
+   %endif%
+   %if interface.5_15.poe = 0%
+   	no power-over-ethernet
+   %endif%
+exit
+interface 5/16
+   %if interface.5_16.state=disable%
+	disable
+   %endif%
+   %if interface.5_16.name%
+     name %interface.5_16.name% 
+   %endif%
+   %if interface.5_16.poe = 0%
+   	no power-over-ethernet
+   %endif%
+exit
+interface 5/17
+   %if interface.5_17.state=disable%
+	disable
+   %endif%
+   %if interface.5_17.name%
+     name %interface.5_17.name% 
+   %endif%
+   %if interface.5_17.poe = 0%
+   	no power-over-ethernet
+   %endif%
+exit
+interface 5/18
+   %if interface.5_18.state=disable%
+	disable
+   %endif%
+   %if interface.5_18.name%
+     name %interface.5_18.name% 
+   %endif%
+   %if interface.5_18.poe = 0%
+   	no power-over-ethernet
+   %endif%
+exit
+interface 5/19
+   %if interface.5_19.state=disable%
+	disable
+   %endif%
+   %if interface.5_19.name%
+     name %interface.5_19.name% 
+   %endif%
+   %if interface.5_19.poe = 0%
+   	no power-over-ethernet
+   %endif%
+exit
+interface 5/20
+   %if interface.5_20.state=disable%
+	disable
+   %endif%
+   %if interface.5_20.name%
+     name %interface.5_20.name% 
+   %endif%
+   %if interface.5_20.poe = 0%
+   	no power-over-ethernet
+   %endif%
+exit
+interface 5/21
+   %if interface.5_21.state=disable%
+	disable
+   %endif%
+   %if interface.5_21.name%
+     name %interface.5_21.name% 
+   %endif%
+   %if interface.5_21.poe = 0%
+   	no power-over-ethernet
+   %endif%
+exit
+interface 5/22
+   %if interface.5_22.state=disable%
+	disable
+   %endif%
+   %if interface.5_22.name%
+     name %interface.5_22.name% 
+   %endif%
+   %if interface.5_22.poe = 0%
+   	no power-over-ethernet
+   %endif%
+exit
+interface 5/23
+   %if interface.5_23.state=disable%
+	disable
+   %endif%
+   %if interface.5_23.name%
+     name %interface.5_23.name% 
+   %endif%
+   %if interface.5_23.poe = 0%
+   	no power-over-ethernet
+   %endif%
+exit
+interface 5/24
+   %if interface.5_24.state=disable%
+	disable
+   %endif%
+   %if interface.5_24.name%
+     name %interface.5_24.name% 
+   %endif%
+   %if interface.5_24.poe = 0%
+   	no power-over-ethernet
+   %endif%
+exit
+%if _member.5.ports = 48%
+interface 5/25
+   %if interface.5_25.state=disable%
+	disable
+   %endif%
+   %if interface.5_25.name%
+     name %interface.5_25.name% 
+   %endif%
+   %if interface.5_25.poe = 0%
+   	no power-over-ethernet
+   %endif%
+exit
+interface 5/26
+   %if interface.5_26.state=disable%
+	disable
+   %endif%
+   %if interface.5_26.name%
+     name %interface.5_26.name% 
+   %endif%
+   %if interface.5_26.poe = 0%
+   	no power-over-ethernet
+   %endif%
+exit
+interface 5/27
+   %if interface.5_27.state=disable%
+	disable
+   %endif%
+   %if interface.5_27.name%
+     name %interface.5_27.name% 
+   %endif%
+   %if interface.5_27.poe = 0%
+   	no power-over-ethernet
+   %endif%
+exit
+interface 5/28
+   %if interface.5_28.state=disable%
+	disable
+   %endif%
+   %if interface.5_28.name%
+     name %interface.5_28.name% 
+   %endif%
+   %if interface.5_28.poe = 0%
+   	no power-over-ethernet
+   %endif%
+exit
+interface 5/29
+   %if interface.5_29.state=disable%
+	disable
+   %endif%
+   %if interface.5_29.name%
+     name %interface.5_29.name% 
+   %endif%
+   %if interface.5_29.poe = 0%
+   	no power-over-ethernet
+   %endif%
+exit
+interface 5/30
+   %if interface.5_30.state=disable%
+	disable
+   %endif%
+   %if interface.5_30.name%
+     name %interface.5_30.name% 
+   %endif%
+   %if interface.5_30.poe = 0%
+   	no power-over-ethernet
+   %endif%
+exit
+interface 5/31
+    %if interface.5_31.state=disable%
+	disable
+   %endif%
+   %if interface.5_31.name%
+     name %interface.5_31.name% 
+   %endif%
+   %if interface.5_31.poe = 0%
+   	no power-over-ethernet
+   %endif%
+exit
+interface 5/32
+   %if interface.5_32.state=disable%
+	disable
+   %endif%
+   %if interface.5_32.name%
+     name %interface.5_32.name% 
+   %endif%
+   %if interface.5_32.poe = 0%
+   	no power-over-ethernet
+   %endif%
+exit
+interface 5/33
+   %if interface.5_33.state=disable%
+	disable
+   %endif%
+   %if interface.5_33.name%
+     name %interface.5_33.name% 
+   %endif%
+   %if interface.5_33.poe = 0%
+   	no power-over-ethernet
+   %endif%
+exit
+interface 5/34
+   %if interface.5_34.state=disable%
+	disable
+   %endif%
+   %if interface.5_34.name%
+     name %interface.5_34.name% 
+   %endif%
+   %if interface.5_34.poe = 0%
+   	no power-over-ethernet
+   %endif%
+exit
+interface 5/35
+   %if interface.5_35.state=disable%
+	disable
+   %endif%
+   %if interface.5_35.name%
+     name %interface.5_35.name% 
+   %endif%
+   %if interface.5_35.poe = 0%
+   	no power-over-ethernet
+   %endif%
+exit
+interface 5/36
+   %if interface.5_36.state=disable%
+	disable
+   %endif%
+   %if interface.5_36.name%
+     name %interface.5_36.name% 
+   %endif%
+   %if interface.5_36.poe = 0%
+   	no power-over-ethernet
+   %endif%
+exit
+interface 5/37
+   %if interface.5_37.state=disable%
+	disable
+   %endif%
+   %if interface.5_37.name%
+     name %interface.5_37.name% 
+   %endif%
+   %if interface.5_37.poe = 0%
+   	no power-over-ethernet
+   %endif%
+exit
+interface 5/38
+   %if interface.5_38.state=disable%
+	disable
+   %endif%
+   %if interface.5_38.name%
+     name %interface.5_38.name% 
+   %endif%
+   %if interface.5_38.poe = 0%
+   	no power-over-ethernet
+   %endif%
+exit
+interface 5/39
+   %if interface.5_39.state=disable%
+	disable
+   %endif%
+   %if interface.5_39.name%
+     name %interface.5_39.name% 
+   %endif%
+   %if interface.5_39.poe = 0%
+   	no power-over-ethernet
+   %endif%
+exit
+interface 5/40
+   %if interface.5_40.state=disable%
+	disable
+   %endif%
+   %if interface.5_40.name%
+     name %interface.5_40.name% 
+   %endif%
+   %if interface.5_40.poe = 0%
+   	no power-over-ethernet
+   %endif%
+exit
+interface 5/41
+   %if interface.5_41.state=disable%
+	disable
+   %endif%
+   %if interface.5_41.name%
+     name %interface.5_41.name% 
+   %endif%
+   %if interface.5_41.poe = 0%
+   	no power-over-ethernet
+   %endif%
+exit
+interface 5/42
+   %if interface.5_42.state=disable%
+	disable
+   %endif%
+   %if interface.5_42.name%
+     name %interface.5_42.name% 
+   %endif%
+   %if interface.5_42.poe = 0%
+   	no power-over-ethernet
+   %endif%
+exit
+interface 5/43
+   %if interface.5_43.state=disable%
+	disable
+   %endif%
+   %if interface.5_43.name%
+     name %interface.5_43.name% 
+   %endif%
+   %if interface.5_43.poe = 0%
+   	no power-over-ethernet
+   %endif%
+exit
+interface 5/44
+   %if interface.5_44.state=disable%
+	disable
+   %endif%
+   %if interface.5_44.name%
+     name %interface.5_44.name% 
+   %endif%
+   %if interface.5_44.poe = 0%
+   	no power-over-ethernet
+   %endif%
+exit
+interface 5/45
+   %if interface.5_45.state=disable%
+	disable
+   %endif%
+   %if interface.5_45.name%
+     name %interface.5_45.name% 
+   %endif%
+   %if interface.5_45.poe = 0%
+   	no power-over-ethernet
+   %endif%
+exit
+interface 5/46
+   %if interface.5_46.state=disable%
+	disable
+   %endif%
+   %if interface.5_46.name%
+     name %interface.5_46.name% 
+   %endif%
+   %if interface.5_46.poe = 0%
+   	no power-over-ethernet
+   %endif%
+exit
+interface 5/47
+   %if interface.5_47.state=disable%
+	disable
+   %endif%
+   %if interface.5_47.name%
+     name %interface.5_47.name% 
+   %endif%
+   %if interface.5_47.poe = 0%
+   	no power-over-ethernet
+   %endif%
+exit
+interface 5/48
+   %if interface.5_48.state=disable%
+	disable
+   %endif%
+   %if interface.5_48.name%
+     name %interface.5_48.name% 
+   %endif%
+   %if interface.5_48.poe = 0%
+   	no power-over-ethernet
+   %endif%
+exit
+%endif%
+%if flex.a.member.5%
+%if flex.a.member.5 = JL081A%
+interface 5/A1
+   %interface.5_A1.state%
+   %if interface.5_A1.name%
+     name %interface.5_A1.name% 
+   %endif%
+   %if interface.5_A1.poe = no%
+   	no power-over-ethernet
+   %endif%
+exit
+interface 5/A2
+   %interface.5_A2.state%
+   %if interface.5_A2.name%
+     name %interface.5_A2.name% 
+   %endif%
+   %if interface.5_A2.poe = no%
+   	no power-over-ethernet
+   %endif%
+exit
+interface 5/A3
+   %interface.5_A3.state%
+   %if interface.5_A3.name%
+     name %interface.5_A3.name% 
+   %endif%
+   %if interface.5_A3.poe = no%
+   	no power-over-ethernet
+   %endif%
+exit
+interface 5/A4
+   %interface.5_A4.state%
+   %if interface.5_A4.name%
+     name %interface.5_A4.name% 
+   %endif%
+   %if interface.5_A4.poe = no%
+   	no power-over-ethernet
+   %endif%
+exit
+%endif%
+%if flex.a.member.5 = JL083A%
+interface 5/A1
+   %interface.5_A1.state%
+   %if interface.5_A1.name%
+     name %interface.5_A1.name% 
+   %endif%
+exit
+interface 5/A2
+   %interface.5_A2.state%
+   %if interface.5_A2.name%
+     name %interface.5_A2.name% 
+   %endif%
+exit
+interface 5/A3
+   %interface.5_A3.state%
+   %if interface.5_A3.name%
+     name %interface.5_A3.name% 
+   %endif%
+exit
+interface 5/A4
+   %interface.5_A4.state%
+   %if interface.5_A4.name%
+     name %interface.5_A4.name% 
+   %endif%
+exit
+%endif%
+%if flex.a.member.5 = JL078A%
+interface 5/A1
+   %interface.5_A1.state%
+   %if interface.5_A1.name%
+     name %interface.5_A1.name% 
+   %endif%
+exit
+%endif%
+%endif%
+%endif%
+vlan 1
+   name "DEFAULT_VLAN"
+   %if vlan.1.untagged%
+   untagged %vlan.1.untagged%
+   %endif%
+   ip address %vlan.1.ip%
+   exit
+%if vlan.2nd%
+   vlan %vlan.2nd%
+   %if vlan.2nd.name%
+   name %vlan.2nd.name%
+   %endif%
+   %if vlan.2nd.untagged%
+   untagged %vlan.2nd.untagged%
+   %endif%
+   %if vlan.2nd.tagged%
+   tagged %vlan.2nd.tagged%
+   %endif%
+   %if vlan.2nd.ip%
+   ip address %vlan.2nd.ip%
+   %endif%
+   %if vlan.2nd.voice = yes%
+   voice
+   %endif%
+   exit
+%endif%
+%if vlan.3rd%
+   vlan %vlan.3rd%
+   %if vlan.3rd.name%
+   name %vlan.3rd.name%
+   %endif%
+   %if vlan.3rd.untagged%
+   untagged %vlan.3rd.untagged%
+   %endif%
+   %if vlan.3rd.tagged%
+   tagged %vlan.3rd.tagged%
+   %endif%
+   %if vlan.3rd.ip%
+   ip address %vlan.3rd.ip%
+   %endif%
+   %if vlan.3rd.voice = yes%
+   voice
+   %endif%
+   exit
+%endif%
+%if vlan.4th%
+   vlan %vlan.4th%
+   %if vlan.4th.name%
+   name %vlan.4th.name%
+   %endif%
+   %if vlan.4th.untagged%
+   untagged %vlan.4th.untagged%
+   %endif%
+   %if vlan.4th.tagged%
+   tagged %vlan.4th.tagged%
+   %endif%
+   %if vlan.4th.ip%
+   ip address %vlan.4th.ip%
+   %endif%
+   %if vlan.4th.voice = yes%
+   voice
+   %endif%
+   exit
+%endif%
+%if vlan.5th%
+   vlan %vlan.5th%
+   %if vlan.5th.name%
+   name %vlan.5th.name%
+   %endif%
+   %if vlan.5th.untagged%
+   untagged %vlan.5th.untagged%
+   %endif%
+   %if vlan.5th.tagged%
+   tagged %vlan.5th.tagged%
+   %endif%
+   %if vlan.5th.ip%
+   ip address %vlan.5th.ip%
+   %endif%
+   %if vlan.5th.voice = yes%
+   voice
+   %endif%
+   exit
+%endif%
+%if vlan.6th%
+   vlan %vlan.6th%
+   %if vlan.6th.name%
+   name %vlan.6th.name%
+   %endif%
+   %if vlan.6th.untagged%
+   untagged %vlan.6th.untagged%
+   %endif%
+   %if vlan.6th.tagged%
+   tagged %vlan.6th.tagged%
+   %endif%
+   %if vlan.6th.ip%
+   ip address %vlan.6th.ip%
+   %endif%
+   %if vlan.6th.voice = yes%
+   voice
+   %endif%
+   exit
+%endif%
+%if vlan.7th%
+   vlan %vlan.7th%
+   %if vlan.7th.name%
+   name %vlan.7th.name%
+   %endif%
+   %if vlan.7th.untagged%
+   untagged %vlan.7th.untagged%
+   %endif%
+   %if vlan.7th.tagged%
+   tagged %vlan.7th.tagged%
+   %endif%
+   %if vlan.7th.ip%
+   ip address %vlan.7th.ip%
+   %endif%
+   %if vlan.7th.voice = yes%
+   voice
+   %endif%
+   exit
+%endif%
+%if vlan.8th%
+   vlan %vlan.8th%
+   %if vlan.8th.name%
+   name %vlan.8th.name%
+   %endif%
+   %if vlan.8th.untagged%
+   untagged %vlan.8th.untagged%
+   %endif%
+   %if vlan.8th.tagged%
+   tagged %vlan.8th.tagged%
+   %endif%
+   %if eight.vlan.ip%
+   ip address %vlan.8th.ip%
+   %endif%
+   %if vlan.8th.voice = yes%
+   voice
+   %endif%
+   exit
+%endif%
+spanning-tree
+%if interface.1_1.stp.edge.port=yes%
+	spanning-tree 1/1 admin-edge-port
+%endif%
+%if interface.1_1.stp.bpdu.protect=yes%
+	spanning-tree 1/1 bpdu-protection
+%endif%
+%if interface.1_2.stp.edge.port=yes%
+	spanning-tree 1/2 admin-edge-port
+%endif%
+%if interface.1_2.stp.bpdu.protect=yes%
+	spanning-tree 1/2 bpdu-protection
+%endif%
+%if interface.1_3.stp.edge.port=yes%
+	spanning-tree 1/3 admin-edge-port
+%endif%
+%if interface.1_3.stp.bpdu.protect=yes%
+	spanning-tree 1/3 bpdu-protection
+%endif%
+%if interface.1_4.stp.edge.port=yes%
+	spanning-tree 1/4 admin-edge-port
+%endif%
+%if interface.1_4.stp.bpdu.protect=yes%
+	spanning-tree 1/4 bpdu-protection
+%endif%
+%if interface.1_5.stp.edge.port=yes%
+	spanning-tree 1/5 admin-edge-port
+%endif%
+%if interface.1_5.stp.bpdu.protect=yes%
+	spanning-tree 1/5 bpdu-protection
+%endif%
+%if interface.1_6.stp.edge.port=yes%
+	spanning-tree 1/6 admin-edge-port
+%endif%
+%if interface.1_6.stp.bpdu.protect=yes%
+	spanning-tree 1/6 bpdu-protection
+%endif%
+%if interface.1_7.stp.edge.port=yes%
+	spanning-tree 1/7 admin-edge-port
+%endif%
+%if interface.1_7.stp.bpdu.protect=yes%
+	spanning-tree 1/7 bpdu-protection
+%endif%
+%if interface.1_8.stp.edge.port=yes%
+	spanning-tree 1/8 admin-edge-port
+%endif%
+%if interface.1_8.stp.bpdu.protect=yes%
+	spanning-tree 1/8 bpdu-protection
+%endif%
+%if interface.1_9.stp.edge.port=yes%
+	spanning-tree 1/9 admin-edge-port
+%endif%
+%if interface.1_9.stp.bpdu.protect=yes%
+	spanning-tree 1/9 bpdu-protection
+%endif%
+%if interface.1_10.stp.edge.port=yes%
+	spanning-tree 1/10 admin-edge-port
+%endif%
+%if interface.1_10.stp.bpdu.protect=yes%
+	spanning-tree 1/10 bpdu-protection
+%endif%
+%if interface.1_11.stp.edge.port=yes%
+	spanning-tree 1/11 admin-edge-port
+%endif%
+%if interface.1_11.stp.bpdu.protect=yes%
+	spanning-tree 1/11 bpdu-protection
+%endif%
+%if interface.1_12.stp.edge.port=yes%
+	spanning-tree 1/12 admin-edge-port
+%endif%
+%if interface.1_12.stp.bpdu.protect=yes%
+	spanning-tree 1/12 bpdu-protection
+%endif%
+%if interface.1_13.stp.edge.port=yes%
+	spanning-tree 1/13 admin-edge-port
+%endif%
+%if interface.1_13.stp.bpdu.protect=yes%
+	spanning-tree 1/13 bpdu-protection
+%endif%
+%if interface.1_14.stp.edge.port=yes%
+	spanning-tree 1/14 admin-edge-port
+%endif%
+%if interface.1_14.stp.bpdu.protect=yes%
+	spanning-tree 1/14 bpdu-protection
+%endif%
+%if interface.1_15.stp.edge.port=yes%
+	spanning-tree 1/15 admin-edge-port
+%endif%
+%if interface.1_15.stp.bpdu.protect=yes%
+	spanning-tree 1/15 bpdu-protection
+%endif%
+%if interface.1_16.stp.edge.port=yes%
+	spanning-tree 1/16 admin-edge-port
+%endif%
+%if interface.1_16.stp.bpdu.protect=yes%
+	spanning-tree 1/16 bpdu-protection
+%endif%
+%if interface.1_17.stp.edge.port=yes%
+	spanning-tree 1/17 admin-edge-port
+%endif%
+%if interface.1_17.stp.bpdu.protect=yes%
+	spanning-tree 1/17 bpdu-protection
+%endif%
+%if interface.1_18.stp.edge.port=yes%
+	spanning-tree 1/18 admin-edge-port
+%endif%
+%if interface.1_18.stp.bpdu.protect=yes%
+	spanning-tree 1/18 bpdu-protection
+%endif%
+%if interface.1_19.stp.edge.port=yes%
+	spanning-tree 1/19 admin-edge-port
+%endif%
+%if interface.1_19.stp.bpdu.protect=yes%
+	spanning-tree 1/19 bpdu-protection
+%endif%
+%if interface.1_20.stp.edge.port=yes%
+	spanning-tree 1/20 admin-edge-port
+%endif%
+%if interface.1_20.stp.bpdu.protect=yes%
+	spanning-tree 1/20 bpdu-protection
+%endif%
+%if interface.1_21.stp.edge.port=yes%
+	spanning-tree 1/21 admin-edge-port
+%endif%
+%if interface.1_21.stp.bpdu.protect=yes%
+	spanning-tree 1/21 bpdu-protection
+%endif%
+%if interface.1_22.stp.edge.port=yes%
+	spanning-tree 1/22 admin-edge-port
+%endif%
+%if interface.1_22.stp.bpdu.protect=yes%
+	spanning-tree 1/22 bpdu-protection
+%endif%
+%if interface.1_23.stp.edge.port=yes%
+	spanning-tree 1/23 admin-edge-port
+%endif%
+%if interface.1_23.stp.bpdu.protect=yes%
+	spanning-tree 1/23 bpdu-protection
+%endif%
+%if interface.1_24.stp.edge.port=yes%
+	spanning-tree 1/24 admin-edge-port
+%endif%
+%if interface.1_24.stp.bpdu.protect=yes%
+	spanning-tree 1/24 bpdu-protection
+%endif%
+%if _member.1.ports = 48%
+%if interface.1_25.stp.edge.port=yes%
+	spanning-tree 1/25 admin-edge-port
+%endif%
+%if interface.1_25.stp.bpdu.protect=yes%
+	spanning-tree 1/25 bpdu-protection
+%endif%
+%if interface.1_26.stp.edge.port=yes%
+	spanning-tree 1/26 admin-edge-port
+%endif%
+%if interface.1_26.stp.bpdu.protect=yes%
+	spanning-tree 1/26 bpdu-protection
+%endif%
+%if interface.1_27.stp.edge.port=yes%
+	spanning-tree 1/27 admin-edge-port
+%endif%
+%if interface.1_27.stp.bpdu.protect=yes%
+	spanning-tree 1/27 bpdu-protection
+%endif%
+%if interface.1_28.stp.edge.port=yes%
+	spanning-tree 1/28 admin-edge-port
+%endif%
+%if interface.1_28.stp.bpdu.protect=yes%
+	spanning-tree 1/28 bpdu-protection
+%endif%
+%if interface.1_29.stp.edge.port=yes%
+	spanning-tree 1/29 admin-edge-port
+%endif%
+%if interface.1_29.stp.bpdu.protect=yes%
+	spanning-tree 1/29 bpdu-protection
+%endif%
+%if interface.1_30.stp.edge.port=yes%
+	spanning-tree 1/30 admin-edge-port
+%endif%
+%if interface.1_30.stp.bpdu.protect=yes%
+	spanning-tree 1/30 bpdu-protection
+%endif%
+%if interface.1_31.stp.edge.port=yes%
+	spanning-tree 1/31 admin-edge-port
+%endif%
+%if interface.1_31.stp.bpdu.protect=yes%
+	spanning-tree 1/31 bpdu-protection
+%endif%
+%if interface.1_32.stp.edge.port=yes%
+	spanning-tree 1/32 admin-edge-port
+%endif%
+%if interface.1_32.stp.bpdu.protect=yes%
+	spanning-tree 1/32 bpdu-protection
+%endif%
+%if interface.1_33.stp.edge.port=yes%
+	spanning-tree 1/33 admin-edge-port
+%endif%
+%if interface.1_33.stp.bpdu.protect=yes%
+	spanning-tree 1/33 bpdu-protection
+%endif%
+%if interface.1_34.stp.edge.port=yes%
+	spanning-tree 1/34 admin-edge-port
+%endif%
+%if interface.1_34.stp.bpdu.protect=yes%
+	spanning-tree 1/34 bpdu-protection
+%endif%
+%if interface.1_35.stp.edge.port=yes%
+	spanning-tree 1/35 admin-edge-port
+%endif%
+%if interface.1_35.stp.bpdu.protect=yes%
+	spanning-tree 1/35 bpdu-protection
+%endif%
+%if interface.1_36.stp.edge.port=yes%
+	spanning-tree 1/36 admin-edge-port
+%endif%
+%if interface.1_36.stp.bpdu.protect=yes%
+	spanning-tree 1/36 bpdu-protection
+%endif%
+%if interface.1_37.stp.edge.port=yes%
+	spanning-tree 1/37 admin-edge-port
+%endif%
+%if interface.1_37.stp.bpdu.protect=yes%
+	spanning-tree 1/37 bpdu-protection
+%endif%
+%if interface.1_38.stp.edge.port=yes%
+	spanning-tree 1/38 admin-edge-port
+%endif%
+%if interface.1_38.stp.bpdu.protect=yes%
+	spanning-tree 1/38 bpdu-protection
+%endif%
+%if interface.1_39.stp.edge.port=yes%
+	spanning-tree 1/39 admin-edge-port
+%endif%
+%if interface.1_39.stp.bpdu.protect=yes%
+	spanning-tree 1/39 bpdu-protection
+%endif%
+%if interface.1_40.stp.edge.port=yes%
+	spanning-tree 1/40 admin-edge-port
+%endif%
+%if interface.1_40.stp.bpdu.protect=yes%
+	spanning-tree 1/40 bpdu-protection
+%endif%
+%if interface.1_41.stp.edge.port=yes%
+	spanning-tree 1/41 admin-edge-port
+%endif%
+%if interface.1_41.stp.bpdu.protect=yes%
+	spanning-tree 1/41 bpdu-protection
+%endif%
+%if interface.1_42.stp.edge.port=yes%
+	spanning-tree 1/42 admin-edge-port
+%endif%
+%if interface.1_42.stp.bpdu.protect=yes%
+	spanning-tree 1/42 bpdu-protection
+%endif%
+%if interface.1_43.stp.edge.port=yes%
+	spanning-tree 1/43 admin-edge-port
+%endif%
+%if interface.1_43.stp.bpdu.protect=yes%
+	spanning-tree 1/43 bpdu-protection
+%endif%
+%if interface.1_44.stp.edge.port=yes%
+	spanning-tree 1/44 admin-edge-port
+%endif%
+%if interface.1_44.stp.bpdu.protect=yes%
+	spanning-tree 1/44 bpdu-protection
+%endif%
+%if interface.1_45.stp.edge.port=yes%
+	spanning-tree 1/45 admin-edge-port
+%endif%
+%if interface.1_45.stp.bpdu.protect=yes%
+	spanning-tree 1/45 bpdu-protection
+%endif%
+%if interface.1_46.stp.edge.port=yes%
+	spanning-tree 1/46 admin-edge-port
+%endif%
+%if interface.1_46.stp.bpdu.protect=yes%
+	spanning-tree 1/46 bpdu-protection
+%endif%
+%if interface.1_47.stp.edge.port=yes%
+	spanning-tree 1/47 admin-edge-port
+%endif%
+%if interface.1_47.stp.bpdu.protect=yes%
+	spanning-tree 1/47 bpdu-protection
+%endif%
+%if interface.1_48.stp.edge.port=yes%
+	spanning-tree 1/48 admin-edge-port
+%endif%
+%if interface.1_48.stp.bpdu.protect=yes%
+	spanning-tree 1/48 bpdu-protection
+%endif%
+%endif%
+%if flex.a.member.1 = JL081A%
+%if interface.1_A1.stp.edge.port=yes%
+	spanning-tree 1/A1 admin-edge-port
+%endif%
+%if interface.1_A1.stp.bpdu.protect=yes%
+	spanning-tree 1/A1 bpdu-protection
+%endif%
+%if interface.1_A2.stp.edge.port=yes%
+	spanning-tree 1/A2 admin-edge-port
+%endif%
+%if interface.1_A2.stp.bpdu.protect=yes%
+	spanning-tree 1/A2 bpdu-protection
+%endif%
+%if interface.1_A3.stp.edge.port=yes%
+	spanning-tree 1/A3 admin-edge-port
+%endif%
+%if interface.1_A3.stp.bpdu.protect=yes%
+	spanning-tree 1/A3 bpdu-protection
+%endif%
+%if interface.1_A4.stp.edge.port=yes%
+	spanning-tree 1/A4 admin-edge-port
+%endif%
+%if interface.1_A4.stp.bpdu.protect=yes%
+	spanning-tree 1/A4 bpdu-protection
+%endif%
+%endif%
+%if flex.a.member.1 = JL083A%
+%if interface.1_A1.stp.edge.port=yes%
+	spanning-tree 1/A1 admin-edge-port
+%endif%
+%if interface.1_A1.stp.bpdu.protect=yes%
+	spanning-tree 1/A1 bpdu-protection
+%endif%
+%if interface.1_A2.stp.edge.port=yes%
+	spanning-tree 1/A2 admin-edge-port
+%endif%
+%if interface.1_A2.stp.bpdu.protect=yes%
+	spanning-tree 1/A2 bpdu-protection
+%endif%
+%if interface.1_A3.stp.edge.port=yes%
+	spanning-tree 1/A3 admin-edge-port
+%endif%
+%if interface.1_A3.stp.bpdu.protect=yes%
+	spanning-tree 1/A3 bpdu-protection
+%endif%
+%if interface.1_A4.stp.edge.port=yes%
+	spanning-tree 1/A4 admin-edge-port
+%endif%
+%if interface.1_A4.stp.bpdu.protect=yes%
+	spanning-tree 1/A4 bpdu-protection
+%endif%
+%endif%
+%if flex.a.member.1 = JL078A%
+%if interface.1_A1.stp.edge.port=yes%
+	spanning-tree 1/A1 admin-edge-port
+%endif%
+%if interface.1_A1.stp.bpdu.protect=yes%
+	spanning-tree 1/A1 bpdu-protection
+%endif%
+%endif%
+%if _member.2.ports%
+%if interface.2_1.stp.edge.port=yes%
+	spanning-tree 2/1 admin-edge-port
+%endif%
+%if interface.2_1.stp.bpdu.protect=yes%
+	spanning-tree 2/1 bpdu-protection
+%endif%
+%if interface.2_2.stp.edge.port=yes%
+	spanning-tree 2/2 admin-edge-port
+%endif%
+%if interface.2_2.stp.bpdu.protect=yes%
+	spanning-tree 2/2 bpdu-protection
+%endif%
+%if interface.2_3.stp.edge.port=yes%
+	spanning-tree 2/3 admin-edge-port
+%endif%
+%if interface.2_3.stp.bpdu.protect=yes%
+	spanning-tree 2/3 bpdu-protection
+%endif%
+%if interface.2_4.stp.edge.port=yes%
+	spanning-tree 2/4 admin-edge-port
+%endif%
+%if interface.2_4.stp.bpdu.protect=yes%
+	spanning-tree 2/4 bpdu-protection
+%endif%
+%if interface.2_5.stp.edge.port=yes%
+	spanning-tree 2/5 admin-edge-port
+%endif%
+%if interface.2_5.stp.bpdu.protect=yes%
+	spanning-tree 2/5 bpdu-protection
+%endif%
+%if interface.2_6.stp.edge.port=yes%
+	spanning-tree 2/6 admin-edge-port
+%endif%
+%if interface.2_6.stp.bpdu.protect=yes%
+	spanning-tree 2/6 bpdu-protection
+%endif%
+%if interface.2_7.stp.edge.port=yes%
+	spanning-tree 2/7 admin-edge-port
+%endif%
+%if interface.2_7.stp.bpdu.protect=yes%
+	spanning-tree 2/7 bpdu-protection
+%endif%
+%if interface.2_8.stp.edge.port=yes%
+	spanning-tree 2/8 admin-edge-port
+%endif%
+%if interface.2_8.stp.bpdu.protect=yes%
+	spanning-tree 2/8 bpdu-protection
+%endif%
+%if interface.2_9.stp.edge.port=yes%
+	spanning-tree 2/9 admin-edge-port
+%endif%
+%if interface.2_9.stp.bpdu.protect=yes%
+	spanning-tree 2/9 bpdu-protection
+%endif%
+%if interface.2_10.stp.edge.port=yes%
+	spanning-tree 2/10 admin-edge-port
+%endif%
+%if interface.2_10.stp.bpdu.protect=yes%
+	spanning-tree 2/10 bpdu-protection
+%endif%
+%if interface.2_11.stp.edge.port=yes%
+	spanning-tree 2/11 admin-edge-port
+%endif%
+%if interface.2_11.stp.bpdu.protect=yes%
+	spanning-tree 2/11 bpdu-protection
+%endif%
+%if interface.2_12.stp.edge.port=yes%
+	spanning-tree 2/12 admin-edge-port
+%endif%
+%if interface.2_12.stp.bpdu.protect=yes%
+	spanning-tree 2/12 bpdu-protection
+%endif%
+%if interface.2_13.stp.edge.port=yes%
+	spanning-tree 2/13 admin-edge-port
+%endif%
+%if interface.2_13.stp.bpdu.protect=yes%
+	spanning-tree 2/13 bpdu-protection
+%endif%
+%if interface.2_14.stp.edge.port=yes%
+	spanning-tree 2/14 admin-edge-port
+%endif%
+%if interface.2_14.stp.bpdu.protect=yes%
+	spanning-tree 2/14 bpdu-protection
+%endif%
+%if interface.2_15.stp.edge.port=yes%
+	spanning-tree 2/15 admin-edge-port
+%endif%
+%if interface.2_15.stp.bpdu.protect=yes%
+	spanning-tree 2/15 bpdu-protection
+%endif%
+%if interface.2_16.stp.edge.port=yes%
+	spanning-tree 2/16 admin-edge-port
+%endif%
+%if interface.2_16.stp.bpdu.protect=yes%
+	spanning-tree 2/16 bpdu-protection
+%endif%
+%if interface.2_17.stp.edge.port=yes%
+	spanning-tree 2/17 admin-edge-port
+%endif%
+%if interface.2_17.stp.bpdu.protect=yes%
+	spanning-tree 2/17 bpdu-protection
+%endif%
+%if interface.2_18.stp.edge.port=yes%
+	spanning-tree 2/18 admin-edge-port
+%endif%
+%if interface.2_18.stp.bpdu.protect=yes%
+	spanning-tree 2/18 bpdu-protection
+%endif%
+%if interface.2_19.stp.edge.port=yes%
+	spanning-tree 2/19 admin-edge-port
+%endif%
+%if interface.2_19.stp.bpdu.protect=yes%
+	spanning-tree 2/19 bpdu-protection
+%endif%
+%if interface.2_20.stp.edge.port=yes%
+	spanning-tree 2/20 admin-edge-port
+%endif%
+%if interface.2_20.stp.bpdu.protect=yes%
+	spanning-tree 2/20 bpdu-protection
+%endif%
+%if interface.2_21.stp.edge.port=yes%
+	spanning-tree 2/21 admin-edge-port
+%endif%
+%if interface.2_21.stp.bpdu.protect=yes%
+	spanning-tree 2/21 bpdu-protection
+%endif%
+%if interface.2_22.stp.edge.port=yes%
+	spanning-tree 2/22 admin-edge-port
+%endif%
+%if interface.2_22.stp.bpdu.protect=yes%
+	spanning-tree 2/22 bpdu-protection
+%endif%
+%if interface.2_23.stp.edge.port=yes%
+	spanning-tree 2/23 admin-edge-port
+%endif%
+%if interface.2_23.stp.bpdu.protect=yes%
+	spanning-tree 2/23 bpdu-protection
+%endif%
+%if interface.2_24.stp.edge.port=yes%
+	spanning-tree 2/24 admin-edge-port
+%endif%
+%if interface.2_24.stp.bpdu.protect=yes%
+	spanning-tree 2/24 bpdu-protection
+%endif%
+%if _member.2.ports = 48%
+%if interface.2_25.stp.edge.port=yes%
+	spanning-tree 2/25 admin-edge-port
+%endif%
+%if interface.2_25.stp.bpdu.protect=yes%
+	spanning-tree 2/25 bpdu-protection
+%endif%
+%if interface.2_26.stp.edge.port=yes%
+	spanning-tree 2/26 admin-edge-port
+%endif%
+%if interface.2_26.stp.bpdu.protect=yes%
+	spanning-tree 2/26 bpdu-protection
+%endif%
+%if interface.2_27.stp.edge.port=yes%
+	spanning-tree 2/27 admin-edge-port
+%endif%
+%if interface.2_27.stp.bpdu.protect=yes%
+	spanning-tree 2/27 bpdu-protection
+%endif%
+%if interface.2_28.stp.edge.port=yes%
+	spanning-tree 2/28 admin-edge-port
+%endif%
+%if interface.2_28.stp.bpdu.protect=yes%
+	spanning-tree 2/28 bpdu-protection
+%endif%
+%if interface.2_29.stp.edge.port=yes%
+	spanning-tree 2/29 admin-edge-port
+%endif%
+%if interface.2_29.stp.bpdu.protect=yes%
+	spanning-tree 2/29 bpdu-protection
+%endif%
+%if interface.2_30.stp.edge.port=yes%
+	spanning-tree 2/30 admin-edge-port
+%endif%
+%if interface.2_30.stp.bpdu.protect=yes%
+	spanning-tree 2/30 bpdu-protection
+%endif%
+%if interface.2_31.stp.edge.port=yes%
+	spanning-tree 2/31 admin-edge-port
+%endif%
+%if interface.2_31.stp.bpdu.protect=yes%
+	spanning-tree 2/31 bpdu-protection
+%endif%
+%if interface.2_32.stp.edge.port=yes%
+	spanning-tree 2/32 admin-edge-port
+%endif%
+%if interface.2_32.stp.bpdu.protect=yes%
+	spanning-tree 2/32 bpdu-protection
+%endif%
+%if interface.2_33.stp.edge.port=yes%
+	spanning-tree 2/33 admin-edge-port
+%endif%
+%if interface.2_33.stp.bpdu.protect=yes%
+	spanning-tree 2/33 bpdu-protection
+%endif%
+%if interface.2_34.stp.edge.port=yes%
+	spanning-tree 2/34 admin-edge-port
+%endif%
+%if interface.2_34.stp.bpdu.protect=yes%
+	spanning-tree 2/34 bpdu-protection
+%endif%
+%if interface.2_35.stp.edge.port=yes%
+	spanning-tree 2/35 admin-edge-port
+%endif%
+%if interface.2_35.stp.bpdu.protect=yes%
+	spanning-tree 2/35 bpdu-protection
+%endif%
+%if interface.2_36.stp.edge.port=yes%
+	spanning-tree 2/36 admin-edge-port
+%endif%
+%if interface.2_36.stp.bpdu.protect=yes%
+	spanning-tree 2/36 bpdu-protection
+%endif%
+%if interface.2_37.stp.edge.port=yes%
+	spanning-tree 2/37 admin-edge-port
+%endif%
+%if interface.2_37.stp.bpdu.protect=yes%
+	spanning-tree 2/37 bpdu-protection
+%endif%
+%if interface.2_38.stp.edge.port=yes%
+	spanning-tree 2/38 admin-edge-port
+%endif%
+%if interface.2_38.stp.bpdu.protect=yes%
+	spanning-tree 2/38 bpdu-protection
+%endif%
+%if interface.2_39.stp.edge.port=yes%
+	spanning-tree 2/39 admin-edge-port
+%endif%
+%if interface.2_39.stp.bpdu.protect=yes%
+	spanning-tree 2/39 bpdu-protection
+%endif%
+%if interface.2_40.stp.edge.port=yes%
+	spanning-tree 2/40 admin-edge-port
+%endif%
+%if interface.2_40.stp.bpdu.protect=yes%
+	spanning-tree 2/40 bpdu-protection
+%endif%
+%if interface.2_41.stp.edge.port=yes%
+	spanning-tree 2/41 admin-edge-port
+%endif%
+%if interface.2_41.stp.bpdu.protect=yes%
+	spanning-tree 2/41 bpdu-protection
+%endif%
+%if interface.2_42.stp.edge.port=yes%
+	spanning-tree 2/42 admin-edge-port
+%endif%
+%if interface.2_42.stp.bpdu.protect=yes%
+	spanning-tree 2/42 bpdu-protection
+%endif%
+%if interface.2_43.stp.edge.port=yes%
+	spanning-tree 2/43 admin-edge-port
+%endif%
+%if interface.2_43.stp.bpdu.protect=yes%
+	spanning-tree 2/43 bpdu-protection
+%endif%
+%if interface.2_44.stp.edge.port=yes%
+	spanning-tree 2/44 admin-edge-port
+%endif%
+%if interface.2_44.stp.bpdu.protect=yes%
+	spanning-tree 2/44 bpdu-protection
+%endif%
+%if interface.2_45.stp.edge.port=yes%
+	spanning-tree 2/45 admin-edge-port
+%endif%
+%if interface.2_45.stp.bpdu.protect=yes%
+	spanning-tree 2/45 bpdu-protection
+%endif%
+%if interface.2_46.stp.edge.port=yes%
+	spanning-tree 2/46 admin-edge-port
+%endif%
+%if interface.2_46.stp.bpdu.protect=yes%
+	spanning-tree 2/46 bpdu-protection
+%endif%
+%if interface.2_47.stp.edge.port=yes%
+	spanning-tree 2/47 admin-edge-port
+%endif%
+%if interface.2_47.stp.bpdu.protect=yes%
+	spanning-tree 2/47 bpdu-protection
+%endif%
+%if interface.2_48.stp.edge.port=yes%
+	spanning-tree 2/48 admin-edge-port
+%endif%
+%if interface.2_48.stp.bpdu.protect=yes%
+	spanning-tree 2/48 bpdu-protection
+%endif%
+%endif%
+%if flex.a.member.2 = JL081A%
+%if interface.2_A1.stp.edge.port=yes%
+	spanning-tree 2/A1 admin-edge-port
+%endif%
+%if interface.2_A1.stp.bpdu.protect=yes%
+	spanning-tree 2/A1 bpdu-protection
+%endif%
+%if interface.2_A2.stp.edge.port=yes%
+	spanning-tree 2/A2 admin-edge-port
+%endif%
+%if interface.2_A2.stp.bpdu.protect=yes%
+	spanning-tree 2/A2 bpdu-protection
+%endif%
+%if interface.2_A3.stp.edge.port=yes%
+	spanning-tree 2/A3 admin-edge-port
+%endif%
+%if interface.2_A3.stp.bpdu.protect=yes%
+	spanning-tree 2/A3 bpdu-protection
+%endif%
+%if interface.2_A4.stp.edge.port=yes%
+	spanning-tree 2/A4 admin-edge-port
+%endif%
+%if interface.2_A4.stp.bpdu.protect=yes%
+	spanning-tree 2/A4 bpdu-protection
+%endif%
+%endif%
+%if flex.a.member.2 = JL083A%
+%if interface.2_A1.stp.edge.port=yes%
+	spanning-tree 2/A1 admin-edge-port
+%endif%
+%if interface.2_A1.stp.bpdu.protect=yes%
+	spanning-tree 2/A1 bpdu-protection
+%endif%
+%if interface.2_A2.stp.edge.port=yes%
+	spanning-tree 2/A2 admin-edge-port
+%endif%
+%if interface.2_A2.stp.bpdu.protect=yes%
+	spanning-tree 2/A2 bpdu-protection
+%endif%
+%if interface.2_A3.stp.edge.port=yes%
+	spanning-tree 2/A3 admin-edge-port
+%endif%
+%if interface.2_A3.stp.bpdu.protect=yes%
+	spanning-tree 2/A3 bpdu-protection
+%endif%
+%if interface.2_A4.stp.edge.port=yes%
+	spanning-tree 2/A4 admin-edge-port
+%endif%
+%if interface.2_A4.stp.bpdu.protect=yes%
+	spanning-tree 2/A4 bpdu-protection
+%endif%
+%endif%
+%if flex.a.member.2 = JL078A%
+%if interface.2_A1.stp.edge.port=yes%
+	spanning-tree 2/A1 admin-edge-port
+%endif%
+%if interface.2_A1.stp.bpdu.protect=yes%
+	spanning-tree 2/A1 bpdu-protection
+%endif%
+%endif%
+%endif%
+%if _member.3.ports%
+%if interface.3_1.stp.edge.port=yes%
+	spanning-tree 3/1 admin-edge-port
+%endif%
+%if interface.3_1.stp.bpdu.protect=yes%
+	spanning-tree 3/1 bpdu-protection
+%endif%
+%if interface.3_2.stp.edge.port=yes%
+	spanning-tree 3/2 admin-edge-port
+%endif%
+%if interface.3_2.stp.bpdu.protect=yes%
+	spanning-tree 3/2 bpdu-protection
+%endif%
+%if interface.3_3.stp.edge.port=yes%
+	spanning-tree 3/3 admin-edge-port
+%endif%
+%if interface.3_3.stp.bpdu.protect=yes%
+	spanning-tree 3/3 bpdu-protection
+%endif%
+%if interface.3_4.stp.edge.port=yes%
+	spanning-tree 3/4 admin-edge-port
+%endif%
+%if interface.3_4.stp.bpdu.protect=yes%
+	spanning-tree 3/4 bpdu-protection
+%endif%
+%if interface.3_5.stp.edge.port=yes%
+	spanning-tree 3/5 admin-edge-port
+%endif%
+%if interface.3_5.stp.bpdu.protect=yes%
+	spanning-tree 3/5 bpdu-protection
+%endif%
+%if interface.3_6.stp.edge.port=yes%
+	spanning-tree 3/6 admin-edge-port
+%endif%
+%if interface.3_6.stp.bpdu.protect=yes%
+	spanning-tree 3/6 bpdu-protection
+%endif%
+%if interface.3_7.stp.edge.port=yes%
+	spanning-tree 3/7 admin-edge-port
+%endif%
+%if interface.3_7.stp.bpdu.protect=yes%
+	spanning-tree 3/7 bpdu-protection
+%endif%
+%if interface.3_8.stp.edge.port=yes%
+	spanning-tree 3/8 admin-edge-port
+%endif%
+%if interface.3_8.stp.bpdu.protect=yes%
+	spanning-tree 3/8 bpdu-protection
+%endif%
+%if interface.3_9.stp.edge.port=yes%
+	spanning-tree 3/9 admin-edge-port
+%endif%
+%if interface.3_9.stp.bpdu.protect=yes%
+	spanning-tree 3/9 bpdu-protection
+%endif%
+%if interface.3_10.stp.edge.port=yes%
+	spanning-tree 3/10 admin-edge-port
+%endif%
+%if interface.3_10.stp.bpdu.protect=yes%
+	spanning-tree 3/10 bpdu-protection
+%endif%
+%if interface.3_11.stp.edge.port=yes%
+	spanning-tree 3/11 admin-edge-port
+%endif%
+%if interface.3_11.stp.bpdu.protect=yes%
+	spanning-tree 3/11 bpdu-protection
+%endif%
+%if interface.3_12.stp.edge.port=yes%
+	spanning-tree 3/12 admin-edge-port
+%endif%
+%if interface.3_12.stp.bpdu.protect=yes%
+	spanning-tree 3/12 bpdu-protection
+%endif%
+%if interface.3_13.stp.edge.port=yes%
+	spanning-tree 3/13 admin-edge-port
+%endif%
+%if interface.3_13.stp.bpdu.protect=yes%
+	spanning-tree 3/13 bpdu-protection
+%endif%
+%if interface.3_14.stp.edge.port=yes%
+	spanning-tree 3/14 admin-edge-port
+%endif%
+%if interface.3_14.stp.bpdu.protect=yes%
+	spanning-tree 3/14 bpdu-protection
+%endif%
+%if interface.3_15.stp.edge.port=yes%
+	spanning-tree 3/15 admin-edge-port
+%endif%
+%if interface.3_15.stp.bpdu.protect=yes%
+	spanning-tree 3/15 bpdu-protection
+%endif%
+%if interface.3_16.stp.edge.port=yes%
+	spanning-tree 3/16 admin-edge-port
+%endif%
+%if interface.3_16.stp.bpdu.protect=yes%
+	spanning-tree 3/16 bpdu-protection
+%endif%
+%if interface.3_17.stp.edge.port=yes%
+	spanning-tree 3/17 admin-edge-port
+%endif%
+%if interface.3_17.stp.bpdu.protect=yes%
+	spanning-tree 3/17 bpdu-protection
+%endif%
+%if interface.3_18.stp.edge.port=yes%
+	spanning-tree 3/18 admin-edge-port
+%endif%
+%if interface.3_18.stp.bpdu.protect=yes%
+	spanning-tree 3/18 bpdu-protection
+%endif%
+%if interface.3_19.stp.edge.port=yes%
+	spanning-tree 3/19 admin-edge-port
+%endif%
+%if interface.3_19.stp.bpdu.protect=yes%
+	spanning-tree 3/19 bpdu-protection
+%endif%
+%if interface.3_20.stp.edge.port=yes%
+	spanning-tree 3/20 admin-edge-port
+%endif%
+%if interface.3_20.stp.bpdu.protect=yes%
+	spanning-tree 3/20 bpdu-protection
+%endif%
+%if interface.3_21.stp.edge.port=yes%
+	spanning-tree 3/21 admin-edge-port
+%endif%
+%if interface.3_21.stp.bpdu.protect=yes%
+	spanning-tree 3/21 bpdu-protection
+%endif%
+%if interface.3_22.stp.edge.port=yes%
+	spanning-tree 3/22 admin-edge-port
+%endif%
+%if interface.3_22.stp.bpdu.protect=yes%
+	spanning-tree 3/22 bpdu-protection
+%endif%
+%if interface.3_23.stp.edge.port=yes%
+	spanning-tree 3/23 admin-edge-port
+%endif%
+%if interface.3_23.stp.bpdu.protect=yes%
+	spanning-tree 3/23 bpdu-protection
+%endif%
+%if interface.3_24.stp.edge.port=yes%
+	spanning-tree 3/24 admin-edge-port
+%endif%
+%if interface.3_24.stp.bpdu.protect=yes%
+	spanning-tree 3/24 bpdu-protection
+%endif%
+%if _member.3.ports = 48%
+%if interface.3_25.stp.edge.port=yes%
+	spanning-tree 3/25 admin-edge-port
+%endif%
+%if interface.3_25.stp.bpdu.protect=yes%
+	spanning-tree 3/25 bpdu-protection
+%endif%
+%if interface.3_26.stp.edge.port=yes%
+	spanning-tree 3/26 admin-edge-port
+%endif%
+%if interface.3_26.stp.bpdu.protect=yes%
+	spanning-tree 3/26 bpdu-protection
+%endif%
+%if interface.3_27.stp.edge.port=yes%
+	spanning-tree 3/27 admin-edge-port
+%endif%
+%if interface.3_27.stp.bpdu.protect=yes%
+	spanning-tree 3/27 bpdu-protection
+%endif%
+%if interface.3_28.stp.edge.port=yes%
+	spanning-tree 3/28 admin-edge-port
+%endif%
+%if interface.3_28.stp.bpdu.protect=yes%
+	spanning-tree 3/28 bpdu-protection
+%endif%
+%if interface.3_29.stp.edge.port=yes%
+	spanning-tree 3/29 admin-edge-port
+%endif%
+%if interface.3_29.stp.bpdu.protect=yes%
+	spanning-tree 3/29 bpdu-protection
+%endif%
+%if interface.3_30.stp.edge.port=yes%
+	spanning-tree 3/30 admin-edge-port
+%endif%
+%if interface.3_30.stp.bpdu.protect=yes%
+	spanning-tree 3/30 bpdu-protection
+%endif%
+%if interface.3_31.stp.edge.port=yes%
+	spanning-tree 3/31 admin-edge-port
+%endif%
+%if interface.3_31.stp.bpdu.protect=yes%
+	spanning-tree 3/31 bpdu-protection
+%endif%
+%if interface.3_32.stp.edge.port=yes%
+	spanning-tree 3/32 admin-edge-port
+%endif%
+%if interface.3_32.stp.bpdu.protect=yes%
+	spanning-tree 3/32 bpdu-protection
+%endif%
+%if interface.3_33.stp.edge.port=yes%
+	spanning-tree 3/33 admin-edge-port
+%endif%
+%if interface.3_33.stp.bpdu.protect=yes%
+	spanning-tree 3/33 bpdu-protection
+%endif%
+%if interface.3_34.stp.edge.port=yes%
+	spanning-tree 3/34 admin-edge-port
+%endif%
+%if interface.3_34.stp.bpdu.protect=yes%
+	spanning-tree 3/34 bpdu-protection
+%endif%
+%if interface.3_35.stp.edge.port=yes%
+	spanning-tree 3/35 admin-edge-port
+%endif%
+%if interface.3_35.stp.bpdu.protect=yes%
+	spanning-tree 3/35 bpdu-protection
+%endif%
+%if interface.3_36.stp.edge.port=yes%
+	spanning-tree 3/36 admin-edge-port
+%endif%
+%if interface.3_36.stp.bpdu.protect=yes%
+	spanning-tree 3/36 bpdu-protection
+%endif%
+%if interface.3_37.stp.edge.port=yes%
+	spanning-tree 3/37 admin-edge-port
+%endif%
+%if interface.3_37.stp.bpdu.protect=yes%
+	spanning-tree 3/37 bpdu-protection
+%endif%
+%if interface.3_38.stp.edge.port=yes%
+	spanning-tree 3/38 admin-edge-port
+%endif%
+%if interface.3_38.stp.bpdu.protect=yes%
+	spanning-tree 3/38 bpdu-protection
+%endif%
+%if interface.3_39.stp.edge.port=yes%
+	spanning-tree 3/39 admin-edge-port
+%endif%
+%if interface.3_39.stp.bpdu.protect=yes%
+	spanning-tree 3/39 bpdu-protection
+%endif%
+%if interface.3_40.stp.edge.port=yes%
+	spanning-tree 3/40 admin-edge-port
+%endif%
+%if interface.3_40.stp.bpdu.protect=yes%
+	spanning-tree 3/40 bpdu-protection
+%endif%
+%if interface.3_41.stp.edge.port=yes%
+	spanning-tree 3/41 admin-edge-port
+%endif%
+%if interface.3_41.stp.bpdu.protect=yes%
+	spanning-tree 3/41 bpdu-protection
+%endif%
+%if interface.3_42.stp.edge.port=yes%
+	spanning-tree 3/42 admin-edge-port
+%endif%
+%if interface.3_42.stp.bpdu.protect=yes%
+	spanning-tree 3/42 bpdu-protection
+%endif%
+%if interface.3_43.stp.edge.port=yes%
+	spanning-tree 3/43 admin-edge-port
+%endif%
+%if interface.3_43.stp.bpdu.protect=yes%
+	spanning-tree 3/43 bpdu-protection
+%endif%
+%if interface.3_44.stp.edge.port=yes%
+	spanning-tree 3/44 admin-edge-port
+%endif%
+%if interface.3_44.stp.bpdu.protect=yes%
+	spanning-tree 3/44 bpdu-protection
+%endif%
+%if interface.3_45.stp.edge.port=yes%
+	spanning-tree 3/45 admin-edge-port
+%endif%
+%if interface.3_45.stp.bpdu.protect=yes%
+	spanning-tree 3/45 bpdu-protection
+%endif%
+%if interface.3_46.stp.edge.port=yes%
+	spanning-tree 3/46 admin-edge-port
+%endif%
+%if interface.3_46.stp.bpdu.protect=yes%
+	spanning-tree 3/46 bpdu-protection
+%endif%
+%if interface.3_47.stp.edge.port=yes%
+	spanning-tree 3/47 admin-edge-port
+%endif%
+%if interface.3_47.stp.bpdu.protect=yes%
+	spanning-tree 3/47 bpdu-protection
+%endif%
+%if interface.3_48.stp.edge.port=yes%
+	spanning-tree 3/48 admin-edge-port
+%endif%
+%if interface.3_48.stp.bpdu.protect=yes%
+	spanning-tree 3/48 bpdu-protection
+%endif%
+%endif%
+%if flex.a.member.3 = JL081A%
+%if interface.3_A1.stp.edge.port=yes%
+	spanning-tree 3/A1 admin-edge-port
+%endif%
+%if interface.3_A1.stp.bpdu.protect=yes%
+	spanning-tree 3/A1 bpdu-protection
+%endif%
+%if interface.3_A2.stp.edge.port=yes%
+	spanning-tree 3/A2 admin-edge-port
+%endif%
+%if interface.3_A2.stp.bpdu.protect=yes%
+	spanning-tree 3/A2 bpdu-protection
+%endif%
+%if interface.3_A3.stp.edge.port=yes%
+	spanning-tree 3/A3 admin-edge-port
+%endif%
+%if interface.3_A3.stp.bpdu.protect=yes%
+	spanning-tree 3/A3 bpdu-protection
+%endif%
+%if interface.3_A4.stp.edge.port=yes%
+	spanning-tree 3/A4 admin-edge-port
+%endif%
+%if interface.3_A4.stp.bpdu.protect=yes%
+	spanning-tree 3/A4 bpdu-protection
+%endif%
+%endif%
+%if flex.a.member.3 = JL083A%
+%if interface.3_A1.stp.edge.port=yes%
+	spanning-tree 3/A1 admin-edge-port
+%endif%
+%if interface.3_A1.stp.bpdu.protect=yes%
+	spanning-tree 3/A1 bpdu-protection
+%endif%
+%if interface.3_A2.stp.edge.port=yes%
+	spanning-tree 3/A2 admin-edge-port
+%endif%
+%if interface.3_A2.stp.bpdu.protect=yes%
+	spanning-tree 3/A2 bpdu-protection
+%endif%
+%if interface.3_A3.stp.edge.port=yes%
+	spanning-tree 3/A3 admin-edge-port
+%endif%
+%if interface.3_A3.stp.bpdu.protect=yes%
+	spanning-tree 3/A3 bpdu-protection
+%endif%
+%if interface.3_A4.stp.edge.port=yes%
+	spanning-tree 3/A4 admin-edge-port
+%endif%
+%if interface.3_A4.stp.bpdu.protect=yes%
+	spanning-tree 3/A4 bpdu-protection
+%endif%
+%endif%
+%if flex.a.member.3 = JL078A%
+%if interface.3_A1.stp.edge.port=yes%
+	spanning-tree 3/A1 admin-edge-port
+%endif%
+%if interface.3_A1.stp.bpdu.protect=yes%
+	spanning-tree 3/A1 bpdu-protection
+%endif%
+%endif%
+%endif%
+%if _member.4.ports%
+%if interface.4_1.stp.edge.port=yes%
+	spanning-tree 4/1 admin-edge-port
+%endif%
+%if interface.4_1.stp.bpdu.protect=yes%
+	spanning-tree 4/1 bpdu-protection
+%endif%
+%if interface.4_2.stp.edge.port=yes%
+	spanning-tree 4/2 admin-edge-port
+%endif%
+%if interface.4_2.stp.bpdu.protect=yes%
+	spanning-tree 4/2 bpdu-protection
+%endif%
+%if interface.4_3.stp.edge.port=yes%
+	spanning-tree 4/3 admin-edge-port
+%endif%
+%if interface.4_3.stp.bpdu.protect=yes%
+	spanning-tree 4/3 bpdu-protection
+%endif%
+%if interface.4_4.stp.edge.port=yes%
+	spanning-tree 4/4 admin-edge-port
+%endif%
+%if interface.4_4.stp.bpdu.protect=yes%
+	spanning-tree 4/4 bpdu-protection
+%endif%
+%if interface.4_5.stp.edge.port=yes%
+	spanning-tree 4/5 admin-edge-port
+%endif%
+%if interface.4_5.stp.bpdu.protect=yes%
+	spanning-tree 4/5 bpdu-protection
+%endif%
+%if interface.4_6.stp.edge.port=yes%
+	spanning-tree 4/6 admin-edge-port
+%endif%
+%if interface.4_6.stp.bpdu.protect=yes%
+	spanning-tree 4/6 bpdu-protection
+%endif%
+%if interface.4_7.stp.edge.port=yes%
+	spanning-tree 4/7 admin-edge-port
+%endif%
+%if interface.4_7.stp.bpdu.protect=yes%
+	spanning-tree 4/7 bpdu-protection
+%endif%
+%if interface.4_8.stp.edge.port=yes%
+	spanning-tree 4/8 admin-edge-port
+%endif%
+%if interface.4_8.stp.bpdu.protect=yes%
+	spanning-tree 4/8 bpdu-protection
+%endif%
+%if interface.4_9.stp.edge.port=yes%
+	spanning-tree 4/9 admin-edge-port
+%endif%
+%if interface.4_9.stp.bpdu.protect=yes%
+	spanning-tree 4/9 bpdu-protection
+%endif%
+%if interface.4_10.stp.edge.port=yes%
+	spanning-tree 4/10 admin-edge-port
+%endif%
+%if interface.4_10.stp.bpdu.protect=yes%
+	spanning-tree 4/10 bpdu-protection
+%endif%
+%if interface.4_11.stp.edge.port=yes%
+	spanning-tree 4/11 admin-edge-port
+%endif%
+%if interface.4_11.stp.bpdu.protect=yes%
+	spanning-tree 4/11 bpdu-protection
+%endif%
+%if interface.4_12.stp.edge.port=yes%
+	spanning-tree 4/12 admin-edge-port
+%endif%
+%if interface.4_12.stp.bpdu.protect=yes%
+	spanning-tree 4/12 bpdu-protection
+%endif%
+%if interface.4_13.stp.edge.port=yes%
+	spanning-tree 4/13 admin-edge-port
+%endif%
+%if interface.4_13.stp.bpdu.protect=yes%
+	spanning-tree 4/13 bpdu-protection
+%endif%
+%if interface.4_14.stp.edge.port=yes%
+	spanning-tree 4/14 admin-edge-port
+%endif%
+%if interface.4_14.stp.bpdu.protect=yes%
+	spanning-tree 4/14 bpdu-protection
+%endif%
+%if interface.4_15.stp.edge.port=yes%
+	spanning-tree 4/15 admin-edge-port
+%endif%
+%if interface.4_15.stp.bpdu.protect=yes%
+	spanning-tree 4/15 bpdu-protection
+%endif%
+%if interface.4_16.stp.edge.port=yes%
+	spanning-tree 4/16 admin-edge-port
+%endif%
+%if interface.4_16.stp.bpdu.protect=yes%
+	spanning-tree 4/16 bpdu-protection
+%endif%
+%if interface.4_17.stp.edge.port=yes%
+	spanning-tree 4/17 admin-edge-port
+%endif%
+%if interface.4_17.stp.bpdu.protect=yes%
+	spanning-tree 4/17 bpdu-protection
+%endif%
+%if interface.4_18.stp.edge.port=yes%
+	spanning-tree 4/18 admin-edge-port
+%endif%
+%if interface.4_18.stp.bpdu.protect=yes%
+	spanning-tree 4/18 bpdu-protection
+%endif%
+%if interface.4_19.stp.edge.port=yes%
+	spanning-tree 4/19 admin-edge-port
+%endif%
+%if interface.4_19.stp.bpdu.protect=yes%
+	spanning-tree 4/19 bpdu-protection
+%endif%
+%if interface.4_20.stp.edge.port=yes%
+	spanning-tree 4/20 admin-edge-port
+%endif%
+%if interface.4_20.stp.bpdu.protect=yes%
+	spanning-tree 4/20 bpdu-protection
+%endif%
+%if interface.4_21.stp.edge.port=yes%
+	spanning-tree 4/21 admin-edge-port
+%endif%
+%if interface.4_21.stp.bpdu.protect=yes%
+	spanning-tree 4/21 bpdu-protection
+%endif%
+%if interface.4_22.stp.edge.port=yes%
+	spanning-tree 4/22 admin-edge-port
+%endif%
+%if interface.4_22.stp.bpdu.protect=yes%
+	spanning-tree 4/22 bpdu-protection
+%endif%
+%if interface.4_23.stp.edge.port=yes%
+	spanning-tree 4/23 admin-edge-port
+%endif%
+%if interface.4_23.stp.bpdu.protect=yes%
+	spanning-tree 4/23 bpdu-protection
+%endif%
+%if interface.4_24.stp.edge.port=yes%
+	spanning-tree 4/24 admin-edge-port
+%endif%
+%if interface.4_24.stp.bpdu.protect=yes%
+	spanning-tree 4/24 bpdu-protection
+%endif%
+%if _member.4.ports = 48%
+%if interface.4_25.stp.edge.port=yes%
+	spanning-tree 4/25 admin-edge-port
+%endif%
+%if interface.4_25.stp.bpdu.protect=yes%
+	spanning-tree 4/25 bpdu-protection
+%endif%
+%if interface.4_26.stp.edge.port=yes%
+	spanning-tree 4/26 admin-edge-port
+%endif%
+%if interface.4_26.stp.bpdu.protect=yes%
+	spanning-tree 4/26 bpdu-protection
+%endif%
+%if interface.4_27.stp.edge.port=yes%
+	spanning-tree 4/27 admin-edge-port
+%endif%
+%if interface.4_27.stp.bpdu.protect=yes%
+	spanning-tree 4/27 bpdu-protection
+%endif%
+%if interface.4_28.stp.edge.port=yes%
+	spanning-tree 4/28 admin-edge-port
+%endif%
+%if interface.4_28.stp.bpdu.protect=yes%
+	spanning-tree 4/28 bpdu-protection
+%endif%
+%if interface.4_29.stp.edge.port=yes%
+	spanning-tree 4/29 admin-edge-port
+%endif%
+%if interface.4_29.stp.bpdu.protect=yes%
+	spanning-tree 4/29 bpdu-protection
+%endif%
+%if interface.4_30.stp.edge.port=yes%
+	spanning-tree 4/30 admin-edge-port
+%endif%
+%if interface.4_30.stp.bpdu.protect=yes%
+	spanning-tree 4/30 bpdu-protection
+%endif%
+%if interface.4_31.stp.edge.port=yes%
+	spanning-tree 4/31 admin-edge-port
+%endif%
+%if interface.4_31.stp.bpdu.protect=yes%
+	spanning-tree 4/31 bpdu-protection
+%endif%
+%if interface.4_32.stp.edge.port=yes%
+	spanning-tree 4/32 admin-edge-port
+%endif%
+%if interface.4_32.stp.bpdu.protect=yes%
+	spanning-tree 4/32 bpdu-protection
+%endif%
+%if interface.4_33.stp.edge.port=yes%
+	spanning-tree 4/33 admin-edge-port
+%endif%
+%if interface.4_33.stp.bpdu.protect=yes%
+	spanning-tree 4/33 bpdu-protection
+%endif%
+%if interface.4_34.stp.edge.port=yes%
+	spanning-tree 4/34 admin-edge-port
+%endif%
+%if interface.4_34.stp.bpdu.protect=yes%
+	spanning-tree 4/34 bpdu-protection
+%endif%
+%if interface.4_35.stp.edge.port=yes%
+	spanning-tree 4/35 admin-edge-port
+%endif%
+%if interface.4_35.stp.bpdu.protect=yes%
+	spanning-tree 4/35 bpdu-protection
+%endif%
+%if interface.4_36.stp.edge.port=yes%
+	spanning-tree 4/36 admin-edge-port
+%endif%
+%if interface.4_36.stp.bpdu.protect=yes%
+	spanning-tree 4/36 bpdu-protection
+%endif%
+%if interface.4_37.stp.edge.port=yes%
+	spanning-tree 4/37 admin-edge-port
+%endif%
+%if interface.4_37.stp.bpdu.protect=yes%
+	spanning-tree 4/37 bpdu-protection
+%endif%
+%if interface.4_38.stp.edge.port=yes%
+	spanning-tree 4/38 admin-edge-port
+%endif%
+%if interface.4_38.stp.bpdu.protect=yes%
+	spanning-tree 4/38 bpdu-protection
+%endif%
+%if interface.4_39.stp.edge.port=yes%
+	spanning-tree 4/39 admin-edge-port
+%endif%
+%if interface.4_39.stp.bpdu.protect=yes%
+	spanning-tree 4/39 bpdu-protection
+%endif%
+%if interface.4_40.stp.edge.port=yes%
+	spanning-tree 4/40 admin-edge-port
+%endif%
+%if interface.4_40.stp.bpdu.protect=yes%
+	spanning-tree 4/40 bpdu-protection
+%endif%
+%if interface.4_41.stp.edge.port=yes%
+	spanning-tree 4/41 admin-edge-port
+%endif%
+%if interface.4_41.stp.bpdu.protect=yes%
+	spanning-tree 4/41 bpdu-protection
+%endif%
+%if interface.4_42.stp.edge.port=yes%
+	spanning-tree 4/42 admin-edge-port
+%endif%
+%if interface.4_42.stp.bpdu.protect=yes%
+	spanning-tree 4/42 bpdu-protection
+%endif%
+%if interface.4_43.stp.edge.port=yes%
+	spanning-tree 4/43 admin-edge-port
+%endif%
+%if interface.4_43.stp.bpdu.protect=yes%
+	spanning-tree 4/43 bpdu-protection
+%endif%
+%if interface.4_44.stp.edge.port=yes%
+	spanning-tree 4/44 admin-edge-port
+%endif%
+%if interface.4_44.stp.bpdu.protect=yes%
+	spanning-tree 4/44 bpdu-protection
+%endif%
+%if interface.4_45.stp.edge.port=yes%
+	spanning-tree 4/45 admin-edge-port
+%endif%
+%if interface.4_45.stp.bpdu.protect=yes%
+	spanning-tree 4/45 bpdu-protection
+%endif%
+%if interface.4_46.stp.edge.port=yes%
+	spanning-tree 4/46 admin-edge-port
+%endif%
+%if interface.4_46.stp.bpdu.protect=yes%
+	spanning-tree 4/46 bpdu-protection
+%endif%
+%if interface.4_47.stp.edge.port=yes%
+	spanning-tree 4/47 admin-edge-port
+%endif%
+%if interface.4_47.stp.bpdu.protect=yes%
+	spanning-tree 4/47 bpdu-protection
+%endif%
+%if interface.4_48.stp.edge.port=yes%
+	spanning-tree 4/48 admin-edge-port
+%endif%
+%if interface.4_48.stp.bpdu.protect=yes%
+	spanning-tree 4/48 bpdu-protection
+%endif%
+%endif%
+%if flex.a.member.4 = JL081A%
+%if interface.4_A1.stp.edge.port=yes%
+	spanning-tree 4/A1 admin-edge-port
+%endif%
+%if interface.4_A1.stp.bpdu.protect=yes%
+	spanning-tree 4/A1 bpdu-protection
+%endif%
+%if interface.4_A2.stp.edge.port=yes%
+	spanning-tree 4/A2 admin-edge-port
+%endif%
+%if interface.4_A2.stp.bpdu.protect=yes%
+	spanning-tree 4/A2 bpdu-protection
+%endif%
+%if interface.4_A3.stp.edge.port=yes%
+	spanning-tree 4/A3 admin-edge-port
+%endif%
+%if interface.4_A3.stp.bpdu.protect=yes%
+	spanning-tree 4/A3 bpdu-protection
+%endif%
+%if interface.4_A4.stp.edge.port=yes%
+	spanning-tree 4/A4 admin-edge-port
+%endif%
+%if interface.4_A4.stp.bpdu.protect=yes%
+	spanning-tree 4/A4 bpdu-protection
+%endif%
+%endif%
+%if flex.a.member.4 = JL083A%
+%if interface.4_A1.stp.edge.port=yes%
+	spanning-tree 4/A1 admin-edge-port
+%endif%
+%if interface.4_A1.stp.bpdu.protect=yes%
+	spanning-tree 4/A1 bpdu-protection
+%endif%
+%if interface.4_A2.stp.edge.port=yes%
+	spanning-tree 4/A2 admin-edge-port
+%endif%
+%if interface.4_A2.stp.bpdu.protect=yes%
+	spanning-tree 4/A2 bpdu-protection
+%endif%
+%if interface.4_A3.stp.edge.port=yes%
+	spanning-tree 4/A3 admin-edge-port
+%endif%
+%if interface.4_A3.stp.bpdu.protect=yes%
+	spanning-tree 4/A3 bpdu-protection
+%endif%
+%if interface.4_A4.stp.edge.port=yes%
+	spanning-tree 4/A4 admin-edge-port
+%endif%
+%if interface.4_A4.stp.bpdu.protect=yes%
+	spanning-tree 4/A4 bpdu-protection
+%endif%
+%endif%
+%if flex.a.member.4 = JL078A%
+%if interface.4_A1.stp.edge.port=yes%
+	spanning-tree 4/A1 admin-edge-port
+%endif%
+%if interface.4_A1.stp.bpdu.protect=yes%
+	spanning-tree 4/A1 bpdu-protection
+%endif%
+%endif%
+%endif%
+%if _member.5.ports%
+%if interface.5_1.stp.edge.port=yes%
+	spanning-tree 5/1 admin-edge-port
+%endif%
+%if interface.5_1.stp.bpdu.protect=yes%
+	spanning-tree 5/1 bpdu-protection
+%endif%
+%if interface.5_2.stp.edge.port=yes%
+	spanning-tree 5/2 admin-edge-port
+%endif%
+%if interface.5_2.stp.bpdu.protect=yes%
+	spanning-tree 5/2 bpdu-protection
+%endif%
+%if interface.5_3.stp.edge.port=yes%
+	spanning-tree 5/3 admin-edge-port
+%endif%
+%if interface.5_3.stp.bpdu.protect=yes%
+	spanning-tree 5/3 bpdu-protection
+%endif%
+%if interface.5_4.stp.edge.port=yes%
+	spanning-tree 5/4 admin-edge-port
+%endif%
+%if interface.5_4.stp.bpdu.protect=yes%
+	spanning-tree 5/4 bpdu-protection
+%endif%
+%if interface.5_5.stp.edge.port=yes%
+	spanning-tree 5/5 admin-edge-port
+%endif%
+%if interface.5_5.stp.bpdu.protect=yes%
+	spanning-tree 5/5 bpdu-protection
+%endif%
+%if interface.5_6.stp.edge.port=yes%
+	spanning-tree 5/6 admin-edge-port
+%endif%
+%if interface.5_6.stp.bpdu.protect=yes%
+	spanning-tree 5/6 bpdu-protection
+%endif%
+%if interface.5_7.stp.edge.port=yes%
+	spanning-tree 5/7 admin-edge-port
+%endif%
+%if interface.5_7.stp.bpdu.protect=yes%
+	spanning-tree 5/7 bpdu-protection
+%endif%
+%if interface.5_8.stp.edge.port=yes%
+	spanning-tree 5/8 admin-edge-port
+%endif%
+%if interface.5_8.stp.bpdu.protect=yes%
+	spanning-tree 5/8 bpdu-protection
+%endif%
+%if interface.5_9.stp.edge.port=yes%
+	spanning-tree 5/9 admin-edge-port
+%endif%
+%if interface.5_9.stp.bpdu.protect=yes%
+	spanning-tree 5/9 bpdu-protection
+%endif%
+%if interface.5_10.stp.edge.port=yes%
+	spanning-tree 5/10 admin-edge-port
+%endif%
+%if interface.5_10.stp.bpdu.protect=yes%
+	spanning-tree 5/10 bpdu-protection
+%endif%
+%if interface.5_11.stp.edge.port=yes%
+	spanning-tree 5/11 admin-edge-port
+%endif%
+%if interface.5_11.stp.bpdu.protect=yes%
+	spanning-tree 5/11 bpdu-protection
+%endif%
+%if interface.5_12.stp.edge.port=yes%
+	spanning-tree 5/12 admin-edge-port
+%endif%
+%if interface.5_12.stp.bpdu.protect=yes%
+	spanning-tree 5/12 bpdu-protection
+%endif%
+%if interface.5_13.stp.edge.port=yes%
+	spanning-tree 5/13 admin-edge-port
+%endif%
+%if interface.5_13.stp.bpdu.protect=yes%
+	spanning-tree 5/13 bpdu-protection
+%endif%
+%if interface.5_14.stp.edge.port=yes%
+	spanning-tree 5/14 admin-edge-port
+%endif%
+%if interface.5_14.stp.bpdu.protect=yes%
+	spanning-tree 5/14 bpdu-protection
+%endif%
+%if interface.5_15.stp.edge.port=yes%
+	spanning-tree 5/15 admin-edge-port
+%endif%
+%if interface.5_15.stp.bpdu.protect=yes%
+	spanning-tree 5/15 bpdu-protection
+%endif%
+%if interface.5_16.stp.edge.port=yes%
+	spanning-tree 5/16 admin-edge-port
+%endif%
+%if interface.5_16.stp.bpdu.protect=yes%
+	spanning-tree 5/16 bpdu-protection
+%endif%
+%if interface.5_17.stp.edge.port=yes%
+	spanning-tree 5/17 admin-edge-port
+%endif%
+%if interface.5_17.stp.bpdu.protect=yes%
+	spanning-tree 5/17 bpdu-protection
+%endif%
+%if interface.5_18.stp.edge.port=yes%
+	spanning-tree 5/18 admin-edge-port
+%endif%
+%if interface.5_18.stp.bpdu.protect=yes%
+	spanning-tree 5/18 bpdu-protection
+%endif%
+%if interface.5_19.stp.edge.port=yes%
+	spanning-tree 5/19 admin-edge-port
+%endif%
+%if interface.5_19.stp.bpdu.protect=yes%
+	spanning-tree 5/19 bpdu-protection
+%endif%
+%if interface.5_20.stp.edge.port=yes%
+	spanning-tree 5/20 admin-edge-port
+%endif%
+%if interface.5_20.stp.bpdu.protect=yes%
+	spanning-tree 5/20 bpdu-protection
+%endif%
+%if interface.5_21.stp.edge.port=yes%
+	spanning-tree 5/21 admin-edge-port
+%endif%
+%if interface.5_21.stp.bpdu.protect=yes%
+	spanning-tree 5/21 bpdu-protection
+%endif%
+%if interface.5_22.stp.edge.port=yes%
+	spanning-tree 5/22 admin-edge-port
+%endif%
+%if interface.5_22.stp.bpdu.protect=yes%
+	spanning-tree 5/22 bpdu-protection
+%endif%
+%if interface.5_23.stp.edge.port=yes%
+	spanning-tree 5/23 admin-edge-port
+%endif%
+%if interface.5_23.stp.bpdu.protect=yes%
+	spanning-tree 5/23 bpdu-protection
+%endif%
+%if interface.5_24.stp.edge.port=yes%
+	spanning-tree 5/24 admin-edge-port
+%endif%
+%if interface.5_24.stp.bpdu.protect=yes%
+	spanning-tree 5/24 bpdu-protection
+%endif%
+%if _member.5.ports = 48%
+%if interface.5_25.stp.edge.port=yes%
+	spanning-tree 5/25 admin-edge-port
+%endif%
+%if interface.5_25.stp.bpdu.protect=yes%
+	spanning-tree 5/25 bpdu-protection
+%endif%
+%if interface.5_26.stp.edge.port=yes%
+	spanning-tree 5/26 admin-edge-port
+%endif%
+%if interface.5_26.stp.bpdu.protect=yes%
+	spanning-tree 5/26 bpdu-protection
+%endif%
+%if interface.5_27.stp.edge.port=yes%
+	spanning-tree 5/27 admin-edge-port
+%endif%
+%if interface.5_27.stp.bpdu.protect=yes%
+	spanning-tree 5/27 bpdu-protection
+%endif%
+%if interface.5_28.stp.edge.port=yes%
+	spanning-tree 5/28 admin-edge-port
+%endif%
+%if interface.5_28.stp.bpdu.protect=yes%
+	spanning-tree 5/28 bpdu-protection
+%endif%
+%if interface.5_29.stp.edge.port=yes%
+	spanning-tree 5/29 admin-edge-port
+%endif%
+%if interface.5_29.stp.bpdu.protect=yes%
+	spanning-tree 5/29 bpdu-protection
+%endif%
+%if interface.5_30.stp.edge.port=yes%
+	spanning-tree 5/30 admin-edge-port
+%endif%
+%if interface.5_30.stp.bpdu.protect=yes%
+	spanning-tree 5/30 bpdu-protection
+%endif%
+%if interface.5_31.stp.edge.port=yes%
+	spanning-tree 5/31 admin-edge-port
+%endif%
+%if interface.5_31.stp.bpdu.protect=yes%
+	spanning-tree 5/31 bpdu-protection
+%endif%
+%if interface.5_32.stp.edge.port=yes%
+	spanning-tree 5/32 admin-edge-port
+%endif%
+%if interface.5_32.stp.bpdu.protect=yes%
+	spanning-tree 5/32 bpdu-protection
+%endif%
+%if interface.5_33.stp.edge.port=yes%
+	spanning-tree 5/33 admin-edge-port
+%endif%
+%if interface.5_33.stp.bpdu.protect=yes%
+	spanning-tree 5/33 bpdu-protection
+%endif%
+%if interface.5_34.stp.edge.port=yes%
+	spanning-tree 5/34 admin-edge-port
+%endif%
+%if interface.5_34.stp.bpdu.protect=yes%
+	spanning-tree 5/34 bpdu-protection
+%endif%
+%if interface.5_35.stp.edge.port=yes%
+	spanning-tree 5/35 admin-edge-port
+%endif%
+%if interface.5_35.stp.bpdu.protect=yes%
+	spanning-tree 5/35 bpdu-protection
+%endif%
+%if interface.5_36.stp.edge.port=yes%
+	spanning-tree 5/36 admin-edge-port
+%endif%
+%if interface.5_36.stp.bpdu.protect=yes%
+	spanning-tree 5/36 bpdu-protection
+%endif%
+%if interface.5_37.stp.edge.port=yes%
+	spanning-tree 5/37 admin-edge-port
+%endif%
+%if interface.5_37.stp.bpdu.protect=yes%
+	spanning-tree 5/37 bpdu-protection
+%endif%
+%if interface.5_38.stp.edge.port=yes%
+	spanning-tree 5/38 admin-edge-port
+%endif%
+%if interface.5_38.stp.bpdu.protect=yes%
+	spanning-tree 5/38 bpdu-protection
+%endif%
+%if interface.5_39.stp.edge.port=yes%
+	spanning-tree 5/39 admin-edge-port
+%endif%
+%if interface.5_39.stp.bpdu.protect=yes%
+	spanning-tree 5/39 bpdu-protection
+%endif%
+%if interface.5_40.stp.edge.port=yes%
+	spanning-tree 5/40 admin-edge-port
+%endif%
+%if interface.5_40.stp.bpdu.protect=yes%
+	spanning-tree 5/40 bpdu-protection
+%endif%
+%if interface.5_41.stp.edge.port=yes%
+	spanning-tree 5/41 admin-edge-port
+%endif%
+%if interface.5_41.stp.bpdu.protect=yes%
+	spanning-tree 5/41 bpdu-protection
+%endif%
+%if interface.5_42.stp.edge.port=yes%
+	spanning-tree 5/42 admin-edge-port
+%endif%
+%if interface.5_42.stp.bpdu.protect=yes%
+	spanning-tree 5/42 bpdu-protection
+%endif%
+%if interface.5_43.stp.edge.port=yes%
+	spanning-tree 5/43 admin-edge-port
+%endif%
+%if interface.5_43.stp.bpdu.protect=yes%
+	spanning-tree 5/43 bpdu-protection
+%endif%
+%if interface.5_44.stp.edge.port=yes%
+	spanning-tree 5/44 admin-edge-port
+%endif%
+%if interface.5_44.stp.bpdu.protect=yes%
+	spanning-tree 5/44 bpdu-protection
+%endif%
+%if interface.5_45.stp.edge.port=yes%
+	spanning-tree 5/45 admin-edge-port
+%endif%
+%if interface.5_45.stp.bpdu.protect=yes%
+	spanning-tree 5/45 bpdu-protection
+%endif%
+%if interface.5_46.stp.edge.port=yes%
+	spanning-tree 5/46 admin-edge-port
+%endif%
+%if interface.5_46.stp.bpdu.protect=yes%
+	spanning-tree 5/46 bpdu-protection
+%endif%
+%if interface.5_47.stp.edge.port=yes%
+	spanning-tree 5/47 admin-edge-port
+%endif%
+%if interface.5_47.stp.bpdu.protect=yes%
+	spanning-tree 5/47 bpdu-protection
+%endif%
+%if interface.5_48.stp.edge.port=yes%
+	spanning-tree 5/48 admin-edge-port
+%endif%
+%if interface.5_48.stp.bpdu.protect=yes%
+	spanning-tree 5/48 bpdu-protection
+%endif%
+%endif%
+%if flex.a.member.5 = JL081A%
+%if interface.5_A1.stp.edge.port=yes%
+	spanning-tree 5/A1 admin-edge-port
+%endif%
+%if interface.5_A1.stp.bpdu.protect=yes%
+	spanning-tree 5/A1 bpdu-protection
+%endif%
+%if interface.5_A2.stp.edge.port=yes%
+	spanning-tree 5/A2 admin-edge-port
+%endif%
+%if interface.5_A2.stp.bpdu.protect=yes%
+	spanning-tree 5/A2 bpdu-protection
+%endif%
+%if interface.5_A3.stp.edge.port=yes%
+	spanning-tree 5/A3 admin-edge-port
+%endif%
+%if interface.5_A3.stp.bpdu.protect=yes%
+	spanning-tree 5/A3 bpdu-protection
+%endif%
+%if interface.5_A4.stp.edge.port=yes%
+	spanning-tree 5/A4 admin-edge-port
+%endif%
+%if interface.5_A4.stp.bpdu.protect=yes%
+	spanning-tree 5/A4 bpdu-protection
+%endif%
+%endif%
+%if flex.a.member.3 = JL083A%
+%if interface.5_A1.stp.edge.port=yes%
+	spanning-tree 5/A1 admin-edge-port
+%endif%
+%if interface.5_A1.stp.bpdu.protect=yes%
+	spanning-tree 5/A1 bpdu-protection
+%endif%
+%if interface.5_A2.stp.edge.port=yes%
+	spanning-tree 5/A2 admin-edge-port
+%endif%
+%if interface.5_A2.stp.bpdu.protect=yes%
+	spanning-tree 5/A2 bpdu-protection
+%endif%
+%if interface.5_A3.stp.edge.port=yes%
+	spanning-tree 5/A3 admin-edge-port
+%endif%
+%if interface.5_A3.stp.bpdu.protect=yes%
+	spanning-tree 5/A3 bpdu-protection
+%endif%
+%if interface.5_A4.stp.edge.port=yes%
+	spanning-tree 5/A4 admin-edge-port
+%endif%
+%if interface.5_A4.stp.bpdu.protect=yes%
+	spanning-tree 5/A4 bpdu-protection
+%endif%
+%endif%
+%if flex.a.member.5 = JL078A%
+%if interface.5_A1.stp.edge.port=yes%
+	spanning-tree 5/A1 admin-edge-port
+%endif%
+%if interface.5_A1.stp.bpdu.protect=yes%
+	spanning-tree 5/A1 bpdu-protection
+%endif%
+%endif%
+%endif%
+spanning-tree config-name %stp.config.name%
+spanning-tree priority %stp.prio%
+%if _trunk.1%
+trunk %_trunk.1% trk1 trunk
+%endif%
+%if _trunk.2%
+trunk %_trunk.2% trk2 trunk
+%endif%
+%if _mgmt.vlan%
+	management-vlan %_mgmt.vlan%
+%endif%
+%if _prim.vlan%
+	primary-vlan %_prim.vlan%
+%endif%
+no tftp server
+no autorun
+no dhcp config-file-update
+no dhcp image-file-update
+no dhcp tr69-acs-url
+device-profile name "default-ap-profile"
+   tagged-vlan %ap.prof.tagged.vlans%
+   exit
+device-profile type "aruba-ap"
+   enable
+   exit
+mac-delimiter colon	

@@ -1,0 +1,70 @@
+%_sys_template_header%
+%_sys_module_command%
+hostname %hostname%
+jumbo ip-mtu 1566
+jumbo max-frame-size 1584
+aruba-central enable
+no cwmp enable
+ip client-tracker
+include-credentials
+password manager user-name "admin" sha1 "HASH_PASSWORD"
+tunneled-node-server
+   controller-ip %tunneldst1%
+   backup-controller-ip %tunneldst2%
+   exit
+interface 1
+   tunneled-node-server
+   exit
+interface 2
+   tunneled-node-server
+   exit
+interface 3
+   tunneled-node-server
+   exit
+interface 4
+   tunneled-node-server
+   exit
+interface 5
+   tunneled-node-server
+   exit
+interface 6
+   tunneled-node-server
+   exit
+interface 7
+   tunneled-node-server
+   exit
+snmp-server community "COMMUNITY" unrestricted
+snmpv3 engineid "%_sys_snmpv3_engineid%"
+vlan 1
+   name "DEFAULT_VLAN"
+   no untagged 1-7
+   untagged 8-10
+   ip address dhcp-bootp
+   exit
+vlan 177
+   name "GUESTS"
+   no ip address
+%if tunneldst2%
+   tagged 8    //This is done to allow VRRP communication between gateways in the case of HA. Not needed if single GW.
+%endif%
+   jumbo
+   exit
+vlan 100
+   name "USERS"
+   untagged 1-7
+   no ip address
+   exit
+no tftp server
+no autorun
+no dhcp config-file-update
+no dhcp image-file-update
+no dhcp tr69-acs-url
+device-profile name "ARUBA-AP"
+   untagged-vlan 100
+   tagged-vlan 177
+   allow-jumbo-frames
+   exit
+device-profile type "aruba-ap"
+   associate "ARUBA-AP"
+   enable
+   exit

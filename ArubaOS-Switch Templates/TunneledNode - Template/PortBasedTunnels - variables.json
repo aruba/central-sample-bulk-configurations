@@ -1,0 +1,16 @@
+{
+  "SERIAL-SW1": {
+    "hostname": "HOSTNAME-SW1", 
+    "tunneldst1": "IP-DST-1",
+    "tunneldst2": "IP-DST-2",
+    "_sys_lan_mac": "MAC-SW1", 
+    "_sys_serial": "SERIAL-SW1"
+  },
+  "SERIAL-SW2": {
+    "hostname": "HOSTNAME-SW2", 
+    "tunneldst1": "IP-DST-1",
+    "tunneldst2": "IP-DST-2",
+    "_sys_lan_mac": "MAC-SW2", 
+    "_sys_serial": "SERIAL-SW2"
+  }
+}
